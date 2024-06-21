@@ -1,4 +1,4 @@
-import {Config} from "tailwindcss/types/config";
+import {Config} from "tailwindcss";
 
 const config: Config = {
     content: [
@@ -7,15 +7,79 @@ const config: Config = {
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
+        colors: {
+            black:"#000000",
+            white:"#FFFFFF",
+            gunmetal: "#1C3037",
+            slate:"#778F9B",
+            storm:"#ADC1C7",
+            cloud:"#e4f1fd",
+            lime:"#DDDE59",
+            'butterfly-blush':"#5C4899",
+            'rasperry-rose':"#BB3385",
+            'success':"#198038",
+            'warning':"#ff832b",
+            'alert':"#da1e28",
+
+        },
         extend: {
             backgroundImage: {
-                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-                "gradient-conic":
-                    "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+                "gradient-radial": "radial-gradient(38.04% 75.07% at 48.61% 57.34%, #ADC1C7 0%, #E4F1FD 100%)",
+            },
+            spacing: {
+                px: '1px',
+                '2px': '2px',
+                0: '0px',
+                0.25: '2px',
+                0.5: '4px',
+                0.75: '6px',
+                1: '8px',
+                1.5: '12px',
+                2: '16px',
+                2.5: '20px',
+                3: '24px',
+                3.5: '28px',
+                4: '32px',
+                5: '40px',
+                6: '48px',
+                7: '56px',
+                8: '64px',
+                9: '72px',
+                10: '80px',
+                11: '88px',
+                12: '96px',
+                13: '104px',
+                14: '112px',
+                15: '120px',
+                16: '128px',
+                18: '144px',
+                20: '160px',
+                21: '168px',
+                24: '192px',
+                27: '216px',
+                32: '256px',
+                35: '280px',
+                36: '288px',
+                40: '320px',
+                44: '352px',
+                48: '384px',
+                52: '400px',
+                54: '432px',
+                56: '448px',
+                64: '512px',
+                68: '544px',
+                78: '624px',
+                90: '720px',
+                96: '768px',
+                120: '960px',
+                128: '1024px',
+                150: '1200px',
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms'),
+    ],
 };
 
 export default config;

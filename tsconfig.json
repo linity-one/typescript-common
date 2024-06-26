@@ -18,11 +18,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "@/common/lib": ["./typescript-common/lib"],
-      "@/common/ui": ["./typescript-common/components/ui"],
-      "@/common/atom": ["./typescript-common/components/atom"],
-      "@/common/molecule": ["./typescript-common/components/molecule"]
+      "@/*": ["./src/*"],
+      "@/common/lib/*": ["./typescript-common/lib/*"],
+      "@/common/ui/*": ["./typescript-common/components/ui/*"],
+      "@/common/atom/*": ["./typescript-common/components/atom/*"],
+      "@/common/molecule/*": ["./typescript-common/components/molecule/*"],
+      "@/components/*" : ["./src/components/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

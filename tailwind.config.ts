@@ -2,11 +2,45 @@ import {Config} from "tailwindcss";
 
 const config: Config = {
     content: [
-        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./components/**/*.{js,ts,jsx,tsx,mdx}",
-        "./app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./typescript-common/components/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
+        screens: {
+            desktop: '1680px',
+            laptop: '1280px',
+            vertical: '1024px',
+            tablet: '768px',
+            phablet: '640px',
+            mobile: '360px',
+        },
+        fontWeight: {
+            normal: '400',
+            'semi-bold': '550',
+            bold: '700',
+        },
+        fontFamily: {
+            title: ['Cairo', 'sans-serif'],
+            body: ['Cairo', 'sans-serif'],
+            math: ['Cairo', 'sans-serif'],
+            button: ['Cairo', 'sans-serif'],
+        },
+        fontSize: {
+            subtext: ['1rem','1.25rem'],
+            text: ['1.5rem','2rem'],
+            h3: ['2.75rem', '3.5rem'],
+            h2: ['4rem', '5rem'],
+            h1: ['6rem','6rem'],
+        },
+        borderRadius: {
+          none: '0px',
+          sm: '4px',
+          md: '8px',
+          lg: '16px',
+          xl: '24px',
+        },
         colors: {
             black:"#000000",
             white:"#FFFFFF",
@@ -63,6 +97,7 @@ const config: Config = {
                 40: '320px',
                 44: '352px',
                 48: '384px',
+                50: '400px',
                 52: '400px',
                 54: '432px',
                 55: '440px',
@@ -80,6 +115,14 @@ const config: Config = {
     },
     plugins: [
         require('@tailwindcss/forms'),
+        function({ addBase, theme }) {
+            addBase({
+                'h1': { fontSize: theme('fontSize.h1'), fontWeight: theme('fontWeight.bold'), fontFamily: theme('fontFamily.title') },
+                'h2': { fontSize: theme('fontSize.h2'), fontWeight: theme('fontWeight.bold'), fontFamily: theme('fontFamily.title') },
+                'h3': { fontSize: theme('fontSize.h3'), fontWeight: theme('fontWeight.semi-bold'), fontFamily: theme('fontFamily.title') },
+                'p': { fontSize: theme('fontSize.text'), fontWeight: theme('fontWeight.normal'), fontFamily: theme('fontFamily.body') },
+            });
+        }
     ],
 };
 

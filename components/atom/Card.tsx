@@ -4,28 +4,28 @@ import {cn} from "@/common/lib/cn"
 
 
 const CardVariants = cva(
-    'shadow-xl',
+    'shadow-xl rounded-xl px-8 py-4 w-full',
     {
         variants: {
             variant: {
-                clean: 'bg-white',
+                clean: 'bg-white text-gunmetal',
                 highlight: 'bg-cloud',
             }
         },
         compoundVariants: [
         ],
         defaultVariants: {
-            variant: 'primary',
+            variant: 'clean',
         }
     })
 
 interface CardProps extends VariantProps<typeof CardVariants>{
-    children:ReactNode
+    children?:ReactNode
 }
 
 const Card: FC<CardProps> = ({children,variant}) => {
     return(
-        <div className={cn(CardVariants({variant}),'px-8 py-4 rounded-xl w-55')}>
+        <div className={cn(CardVariants({variant}))}>
             {children}
         </div>
     )

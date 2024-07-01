@@ -1,5 +1,6 @@
-import { FC } from 'react'
+import {FC, forwardRef, InputHTMLAttributes} from 'react'
 import {cva,VariantProps} from "cva";
+import {cn} from "../../lib/cn";
 
 
 const InputVariants = cva(
@@ -18,12 +19,14 @@ const InputVariants = cva(
         }
     })
 
-interface InputProps extends VariantProps<typeof InputVariants>{
+interface InputProps extends InputHTMLAttributes<HTMLInputElement>, VariantProps<typeof InputVariants> {
 
 }
 
-const Input: FC<InputProps> = ({}) => {
-    return <div>Input</div>
-}
+const Input: FC<InputProps> = forwardRef<HTMLInputElement,InputProps>(({variant, className,children,...props},ref) => {
+    return <input ref={ref} className={cn(InputVariants({variant}),className)} {...props}>{children}</input>
+})
+
+Input.displayName = 'Input'
 
 export default Input

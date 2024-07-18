@@ -3,20 +3,20 @@ import { cva, VariantProps } from 'cva';
 import { cn } from '@/common/lib/cn';
 
 const ButtonVariants = cva(
-  'font-bold font-button rounded-md flex flex-row items-center gap-1',
+  'font-bold font-button rounded-md flex flex-row items-center gap-1 ',
   {
     variants: {
       variant: {
         primary: 'bg-cloud hover:bg-storm text-gunmetal',
-        secondary: 'bg-cloud hover:bg-storm text-gunmetal',
+        secondary: 'bg-gunmetal',
         lime: 'bg-cloud hover:bg-storm text-gunmetal',
-        gunmetal: 'bg-cloud hover:bg-storm text-gunmetal',
-        nav: 'bg-cloud hover:bg-storm text-gunmetal',
+        gunmetal: '',
+        nav: 'bg-gunmetal',
         ghost: '',
       },
       size: {
         sm: '',
-        md: 'px-4 py-1 text-text',
+        md: 'px-4 py-1',
         lg: '',
       },
     },

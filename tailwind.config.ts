@@ -29,11 +29,11 @@ const config: Config = {
       button: ['Cairo', 'sans-serif'],
     },
     fontSize: {
-      subtext: ['1rem', '1.25rem'],
-      text: ['1.5rem', '2rem'],
-      h3: ['2.75rem', '3.5rem'],
+      subtext: ['1rem', '1.5rem'],
+      text: ['1.625rem', '2rem'],
+      h3: ['2.5rem', '4rem'],
       h2: ['4rem', '5rem'],
-      h1: ['6rem', '6rem'],
+      h1: ['5.25rem', '6rem'],
     },
     borderRadius: {
       none: '0px',
@@ -41,6 +41,16 @@ const config: Config = {
       md: '8px',
       lg: '16px',
       xl: '24px',
+    },
+    boxShadow: {
+      100: '0px 2px 4px -2px rgba(40, 51, 58, 0.12), 0px 4px 4px -2px rgba(40, 51, 58, 0.08)',
+      200: '0px 4px 6px -4px rgba(40, 51, 58, 0.12), 0px 8px 8px -4px rgba(40, 51, 58, 0.08)',
+      300: '0px 6px 8px -6px rgba(40, 51, 58, 0.12), 0px 8px 16px -6px rgba(40, 51, 58, 0.08)',
+      400: '0px 6px 12px -6px rgba(40, 51, 58, 0.12), 0px 8px 24px -4px rgba(40, 51, 58, 0.08)',
+      500: '0px 6px 14px -6px rgba(40, 51, 58, 0.12), 0px 10px 32px -4px rgba(40, 51, 58, 0.10)',
+      600: '0px 8px 18px -6px rgba(40, 51, 58, 0.12), 0px 12px 42px -4px rgba(40, 51, 58, 0.12)',
+      700: '0px 8px 22px -6px rgba(40, 51, 58, 0.12), 0px 14px 64px -4px rgba(40, 51, 58, 0.12)',
+      800: '0px 8px 28px -6px rgba(40, 51, 58, 0.12), 0px 18px 88px -4px rgba(40, 51, 58, 0.14)',
     },
     colors: {
       black: '#000000',

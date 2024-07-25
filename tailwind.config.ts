@@ -17,6 +17,16 @@ const config: Config = {
       phablet: '640px',
       mobile: '360px',
     },
+    container: {
+      screens: {
+        desktop: '1504px',
+        laptop: '11120px',
+        vertical: '864px',
+        tablet: '672px',
+        phablet: '584px',
+        mobile: '328px',
+      },
+    },
     fontWeight: {
       normal: '400',
       'semi-bold': '550',
@@ -30,7 +40,7 @@ const config: Config = {
     },
     fontSize: {
       subtext: ['1rem', '1.5rem'],
-      text: ['1.625rem', '2rem'],
+      text: ['1.5rem', '2rem'],
       h3: ['2.5rem', '4rem'],
       h2: ['4rem', '5rem'],
       h1: ['5.25rem', '6rem'],

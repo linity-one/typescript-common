@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'cva';
 import { cn } from '@/common/lib/cn';
 
 const ButtonVariants = cva(
-  'font-semi-bold font-button flex flex-row items-center gap-1 transition-colors duration-300',
+  'font-semi-bold font-button text-h3 flex flex-row items-center gap-1 transition-colors duration-300',
   {
     variants: {
       variant: {
@@ -15,8 +15,8 @@ const ButtonVariants = cva(
         ghost: '',
       },
       size: {
-        sm: 'px-md py-xxs text-subtext',
-        md: 'px-lg py-xs text-text',
+        sm: 'text-subtext px-md py-xxs  rounded-sm',
+        md: 'px-lg py-xs text-text rounded-md',
       },
       theme: {
         dark: '',
@@ -60,11 +60,11 @@ interface ButtonProps
     VariantProps<typeof ButtonVariants> {}
 
 const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, className, variant, size, ...props }, ref) => {
+  ({ children, className, variant, theme, size, ...props }, ref) => {
     return (
       <button
         ref={ref}
-        className={cn(ButtonVariants({ variant, size }), className)}
+        className={cn(ButtonVariants({ variant, size, theme }), className)}
         {...props}
       >
         {children}

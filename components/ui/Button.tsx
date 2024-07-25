@@ -3,27 +3,54 @@ import { cva, VariantProps } from 'cva';
 import { cn } from '@/common/lib/cn';
 
 const ButtonVariants = cva(
-  'font-bold font-button rounded-md flex flex-row items-center gap-1 ',
+  'font-semi-bold font-button flex flex-row items-center gap-1 transition-colors duration-300',
   {
     variants: {
       variant: {
-        primary: 'bg-cloud hover:bg-storm text-gunmetal',
-        secondary: 'bg-gunmetal',
+        primary: '',
+        secondary: '',
         lime: 'bg-cloud hover:bg-storm text-gunmetal',
         gunmetal: '',
-        nav: 'bg-gunmetal',
+        nav: '',
         ghost: '',
       },
       size: {
-        sm: '',
-        md: 'px-4 py-1',
-        lg: '',
+        sm: 'px-md py-xxs text-subtext',
+        md: 'px-lg py-xs text-text',
+      },
+      theme: {
+        dark: '',
+        light: '',
       },
     },
-    compoundVariants: [],
+    compoundVariants: [
+      {
+        variant: 'primary',
+        theme: 'dark',
+        className: 'bg-gunmetal hover:bg-gunmetal-800 text-lime',
+      },
+      {
+        variant: 'primary',
+        theme: 'light',
+        className: 'bg-lime hover:bg-lime-hover text-gunmetal',
+      },
+      {
+        variant: 'secondary',
+        theme: 'dark',
+        className:
+          'bg-none border border-gunmetal text-gunmetal hover:bg-gunmetal hover:text-cloud',
+      },
+      {
+        variant: 'secondary',
+        theme: 'light',
+        className:
+          'bg-none border border-cloud text-cloud hover:bg-cloud hover:text-gunmetal',
+      },
+    ],
     defaultVariants: {
       variant: 'primary',
       size: 'md',
+      theme: 'dark',
     },
   },
 );

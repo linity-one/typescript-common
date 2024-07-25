@@ -51,17 +51,40 @@ const config: Config = {
       600: '0px 8px 18px -6px rgba(40, 51, 58, 0.12), 0px 12px 42px -4px rgba(40, 51, 58, 0.12)',
       700: '0px 8px 22px -6px rgba(40, 51, 58, 0.12), 0px 14px 64px -4px rgba(40, 51, 58, 0.12)',
       800: '0px 8px 28px -6px rgba(40, 51, 58, 0.12), 0px 18px 88px -4px rgba(40, 51, 58, 0.14)',
+      'light-100':
+        '0px 2px 4px -2px rgba(228, 241, 253, 0.12), 0px 4px 4px -2px rgba(228, 241, 253, 0.08)',
+      'light-200':
+        '0px 4px 6px -4px rgba(228, 241, 253, 0.12), 0px 8px 8px -4px rgba(228, 241, 253, 0.08)',
+      'light-300':
+        '0px 6px 8px -6px rgba(228, 241, 253, 0.12), 0px 8px 16px -6px rgba(228, 241, 253, 0.08)',
+      'light-400':
+        '0px 6px 12px -6px rgba(228, 241, 253, 0.12), 0px 8px 24px -4px rgba(228, 241, 253, 0.08)',
+      'light-500':
+        '0px 6px 14px -6px rgba(228, 241, 253, 0.12), 0px 10px 32px -4px rgba(228, 241, 253, 0.10)',
+      'light-600':
+        '0px 8px 18px -6px rgba(228, 241, 253, 0.12), 0px 12px 42px -4px rgba(228, 241, 253, 0.12)',
+      'light-700':
+        '0px 8px 22px -6px rgba(228, 241, 253, 0.12), 0px 14px 64px -4px rgba(228, 241, 253, 0.12)',
+      'light-800':
+        '0px 8px 28px -6px rgba(228, 241, 253, 0.12), 0px 18px 88px -4px rgba(228, 241, 253, 0.14)',
     },
     colors: {
       black: '#000000',
       white: '#FFFFFF',
-      gunmetal: '#1C3037',
+      gunmetal: {
+        DEFAULT: '#28333A',
+        950: '#28333A',
+        900: '#343F45',
+        800: '#3A4950',
+        700: '#3A4950',
+      },
       slate: '#778F9B',
       storm: '#ADC1C7',
       cloud: '#e4f1fd',
-      lime: '#DDDE59',
-      'butterfly-blush': '#5C4899',
-      'rasperry-rose': '#BB3385',
+      lime: {
+        DEFAULT: '#DDDE59',
+        hover: '#E9EC9C',
+      },
       success: '#198038',
       warning: '#ff832b',
       alert: '#da1e28',
@@ -72,8 +95,15 @@ const config: Config = {
           'radial-gradient(38.04% 75.07% at 48.61% 57.34%, #ADC1C7 0%, #E4F1FD 100%)',
       },
       spacing: {
-        px: '1px',
-        '2px': '2px',
+        '3xs': '2px',
+        xxs: '4px',
+        xs: '8px',
+        sm: '12px',
+        md: '16px',
+        ld: '24px',
+        xl: '40px',
+        xxl: '64px',
+        '3xl': '96px',
         0: '0px',
         0.25: '2px',
         0.5: '4px',

@@ -14,9 +14,6 @@ const Arrow = ({ ...props }: SVGProps<SVGSVGElement>) => {
         d="M18.5586 3H4.27247V6.8408H14.4439L3 18.2847L5.71528 21L17.1592 9.55608V19.7275H21V5.44141L18.5586 3Z"
         fill="currentColor"
       />
-      <clipPath id="clip0_729_1645">
-        <rect width="24" height="24" fill="none" />
-      </clipPath>
     </svg>
   );
 };

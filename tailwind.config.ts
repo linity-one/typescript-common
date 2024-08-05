@@ -28,11 +28,17 @@ const config: Config = {
       button: ['Cairo', 'sans-serif'],
     },
     fontSize: {
-      subtext: ['1rem', '1.5rem'],
-      text: ['1.625rem', '2rem'],
-      h3: ['2.5rem', '4rem'],
-      h2: ['4rem', '5rem'],
-      h1: ['5.25rem', '6rem'],
+      subtext: ['16px', '24px'],
+      text: ['21px', '32px'],
+      h3: ['40px', '48px'],
+      h2: ['64px', '80px'],
+      h1: ['84px', '96px'],
+
+      'subtext-sm': ['10px', '16px'],
+      'text-sm': ['16px', '24px'],
+      'h3-sm': ['21px', '32px'],
+      'h2-sm': ['40px', '48px'],
+      'h1-sm': ['64px', '80px'],
     },
     borderRadius: {
       none: '0px',
@@ -176,6 +182,13 @@ const config: Config = {
           fontSize: theme('fontSize.text'),
           fontWeight: theme('fontWeight.normal'),
           fontFamily: theme('fontFamily.body'),
+        },
+        [`@media (max-width: ${theme('screens.mobile')})`]: {
+          '.text-subtext': theme('fontSize.subtext-sm'),
+          '.text-text': theme('fontSize.text-sm'),
+          '.text-h3': theme('fontSize.h3-sm'),
+          '.text-h2': theme('fontSize.h2-sm'),
+          '.text-h1': theme('fontSize.h1-sm'),
         },
       });
     },

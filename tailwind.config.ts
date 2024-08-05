@@ -3,10 +3,10 @@ import { PluginAPI } from 'tailwindcss/types/config';
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './typescript-common/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/pages//*.{js,ts,jsx,tsx,mdx}',
+    './src/components//*.{js,ts,jsx,tsx,mdx}',
+    './src/app//*.{js,ts,jsx,tsx,mdx}',
+    './typescript-common/components//*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     screens: {
@@ -16,16 +16,6 @@ const config: Config = {
       tablet: '768px',
       phablet: '640px',
       mobile: '360px',
-    },
-    container: {
-      screens: {
-        desktop: '1504px',
-        laptop: '11120px',
-        vertical: '864px',
-        tablet: '672px',
-        phablet: '584px',
-        mobile: '328px',
-      },
     },
     fontWeight: {
       normal: '400',
@@ -39,18 +29,11 @@ const config: Config = {
       button: ['Cairo', 'sans-serif'],
     },
     fontSize: {
-        subtext: ['16px', '24px'],
-        text: ['21px', '32px'],
-        h3: ['40px', '48px'],
-        h2: ['64px', '80px'],
-        h1: ['84px', '96px'],
-
-        'subtext-sm': ['10px', '16px'],
-        'text-sm': ['16px', '24px'],
-        'h3-sm': ['21px', '32px'],
-        'h2-sm': ['40px', '48px'],
-        'h1-sm': ['64px', '80px'],
-      },
+      subtext: ['1rem', '1.5rem'],
+      text: ['1.625rem', '2rem'],
+      h3: ['2.5rem', '4rem'],
+      h2: ['4rem', '5rem'],
+      h1: ['5.25rem', '6rem'],
     },
     borderRadius: {
       none: '0px',
@@ -195,23 +178,8 @@ const config: Config = {
           fontWeight: theme('fontWeight.normal'),
           fontFamily: theme('fontFamily.body'),
         },
-        '.text-subtext': { fontSize: theme('fontSize.subtext')[0], lineHeight: theme('fontSize.subtext')[1] },
-        '.text-text': { fontSize: theme('fontSize.text')[0], lineHeight: theme('fontSize.text')[1] },
-        '.text-h3': { fontSize: theme('fontSize.h3')[0], lineHeight: theme('fontSize.h3')[1] },
-        '.text-h2': { fontSize: theme('fontSize.h2')[0], lineHeight: theme('fontSize.h2')[1] },
-        '.text-h1': { fontSize: theme('fontSize.h1')[0], lineHeight: theme('fontSize.h1')[1] },
-
-        [`@media (max-width: ${theme('screens.phablet')})`]: {
-          '.text-subtext': { fontSize: theme('fontSize.subtext-sm')[0], lineHeight: theme('fontSize.subtext-sm')[1] },
-          '.text-text': { fontSize: theme('fontSize.text-sm')[0], lineHeight: theme('fontSize.text-sm')[1] },
-          '.text-h3': { fontSize: theme('fontSize.h3-sm')[0], lineHeight: theme('fontSize.h3-sm')[1] },
-          '.text-h2': { fontSize: theme('fontSize.h2-sm')[0], lineHeight: theme('fontSize.h2-sm')[1] },
-          '.text-h1': { fontSize: theme('fontSize.h1-sm')[0], lineHeight: theme('fontSize.h1-sm')[1] },
-        },
       });
     },
-
   ],
 };
-
 export default config;

@@ -183,7 +183,7 @@ const config: Config = {
           fontWeight: theme('fontWeight.normal'),
           fontFamily: theme('fontFamily.body'),
         },
-        [`@media (max-width: ${theme('screens.mobile')})`]: {
+        [`@media (max-width: ${theme('screens.phablet')})`]: {
           '.text-subtext': theme('fontSize.subtext-sm'),
           '.text-text': theme('fontSize.text-sm'),
           '.text-h3': theme('fontSize.h3-sm'),

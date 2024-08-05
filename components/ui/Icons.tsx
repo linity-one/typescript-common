@@ -27,9 +27,7 @@ const IconsVariants = cva('', {
   },
 });
 
-interface IconsProps extends VariantProps<typeof IconsVariants> {
-
-}
+interface IconsProps extends VariantProps<typeof IconsVariants> {}
 
 export const ArrowIcon: FC<IconsProps> = ({ size, colour }) => {
   return <Arrow className={cn(IconsVariants({ colour, size }))} />;

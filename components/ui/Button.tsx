@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, FC, forwardRef } from 'react';
 import { cva, VariantProps } from 'cva';
 import { cn } from '@/common/lib/cn';
 
-const ButtonVariants = cva(
+export const ButtonVariants = cva(
   'font-button text-h3 flex flex-row items-center gap-1 transition-colors duration-300',
   {
     variants: {
@@ -11,7 +11,7 @@ const ButtonVariants = cva(
         secondary: '',
       },
       size: {
-        sm: 'text-subtext px-md py-xxs  rounded-sm',
+        sm: 'text-subtext px-md py-xxs rounded-sm',
         md: 'px-2 py-xs text-text rounded-md',
       },
       theme: {

@@ -30,15 +30,15 @@ const config: Config = {
     fontSize: {
       subtext: ['16px', '24px'],
       text: ['21px', '32px'],
-      h3: ['40px', '48px'],
-      h2: ['64px', '80px'],
-      h1: ['84px', '96px'],
+      h3: ['32px', '40px'],
+      h2: ['48px', '64px'],
+      h1: ['64px', '80px'],
 
       'subtext-sm': ['10px', '16px'],
       'text-sm': ['16px', '24px'],
       'h3-sm': ['21px', '32px'],
-      'h2-sm': ['40px', '48px'],
-      'h1-sm': ['64px', '80px'],
+      'h2-sm': ['32px', '40px'],
+      'h1-sm': ['48px', '64px'],
     },
     borderRadius: {
       none: '0px',
@@ -165,12 +165,12 @@ const config: Config = {
       addBase({
         h1: {
           fontSize: theme('fontSize.h1'),
-          fontWeight: theme('fontWeight.bold'),
+          fontWeight: theme('fontWeight.semi-bold'),
           fontFamily: theme('fontFamily.title'),
         },
         h2: {
           fontSize: theme('fontSize.h2'),
-          fontWeight: theme('fontWeight.bold'),
+          fontWeight: theme('fontWeight.normal'),
           fontFamily: theme('fontFamily.title'),
         },
         h3: {

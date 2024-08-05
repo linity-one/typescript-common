@@ -1,5 +1,3 @@
-
-
 import { SVGProps } from 'react';
 
 const Search = ({ ...props }: SVGProps<SVGSVGElement>) => {

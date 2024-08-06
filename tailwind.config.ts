@@ -97,7 +97,12 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial':
           'radial-gradient(38.04% 75.07% at 48.61% 57.34%, #ADC1C7 0%, #E4F1FD 100%)',
+        'gradient-gunmetal-white':
+          'linear-gradient(to right, #28333A 50%, #ffffff 50%)',
+        'gradient-gunmetal-white-b':
+          'linear-gradient(to bottom, #28333A 65%, #ffffff 35%)',
       },
+
       spacing: {
         '3xs': '2px',
         xxs: '4px',

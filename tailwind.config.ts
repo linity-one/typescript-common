@@ -1,5 +1,6 @@
 import { Config } from 'tailwindcss';
 import { PluginAPI } from 'tailwindcss/types/config';
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -27,19 +28,7 @@ const config: Config = {
       math: ['Cairo', 'sans-serif'],
       button: ['Cairo', 'sans-serif'],
     },
-    fontSize: {
-      subtext: ['16px', '24px'],
-      text: ['21px', '32px'],
-      h3: ['32px', '40px'],
-      h2: ['48px', '64px'],
-      h1: ['64px', '80px'],
 
-      'subtext-sm': ['10px', '16px'],
-      'text-sm': ['16px', '24px'],
-      'h3-sm': ['21px', '32px'],
-      'h2-sm': ['32px', '40px'],
-      'h1-sm': ['48px', '64px'],
-    },
     borderRadius: {
       none: '0px',
       sm: '4px',
@@ -56,22 +45,14 @@ const config: Config = {
       600: '0px 8px 18px -6px rgba(40, 51, 58, 0.12), 0px 12px 42px -4px rgba(40, 51, 58, 0.12)',
       700: '0px 8px 22px -6px rgba(40, 51, 58, 0.12), 0px 14px 64px -4px rgba(40, 51, 58, 0.12)',
       800: '0px 8px 28px -6px rgba(40, 51, 58, 0.12), 0px 18px 88px -4px rgba(40, 51, 58, 0.14)',
-      'light-100':
-        '0px 2px 4px -2px rgba(228, 241, 253, 0.12), 0px 4px 4px -2px rgba(228, 241, 253, 0.08)',
-      'light-200':
-        '0px 4px 6px -4px rgba(228, 241, 253, 0.12), 0px 8px 8px -4px rgba(228, 241, 253, 0.08)',
-      'light-300':
-        '0px 6px 8px -6px rgba(228, 241, 253, 0.12), 0px 8px 16px -6px rgba(228, 241, 253, 0.08)',
-      'light-400':
-        '0px 6px 12px -6px rgba(228, 241, 253, 0.12), 0px 8px 24px -4px rgba(228, 241, 253, 0.08)',
-      'light-500':
-        '0px 6px 14px -6px rgba(228, 241, 253, 0.12), 0px 10px 32px -4px rgba(228, 241, 253, 0.10)',
-      'light-600':
-        '0px 8px 18px -6px rgba(228, 241, 253, 0.12), 0px 12px 42px -4px rgba(228, 241, 253, 0.12)',
-      'light-700':
-        '0px 8px 22px -6px rgba(228, 241, 253, 0.12), 0px 14px 64px -4px rgba(228, 241, 253, 0.12)',
-      'light-800':
-        '0px 8px 28px -6px rgba(228, 241, 253, 0.12), 0px 18px 88px -4px rgba(228, 241, 253, 0.14)',
+      'light-100': '0px 2px 4px -2px rgba(228, 241, 253, 0.12), 0px 4px 4px -2px rgba(228, 241, 253, 0.08)',
+      'light-200': '0px 4px 6px -4px rgba(228, 241, 253, 0.12), 0px 8px 8px -4px rgba(228, 241, 253, 0.08)',
+      'light-300': '0px 6px 8px -6px rgba(228, 241, 253, 0.12), 0px 8px 16px -6px rgba(228, 241, 253, 0.08)',
+      'light-400': '0px 6px 12px -6px rgba(228, 241, 253, 0.12), 0px 8px 24px -4px rgba(228, 241, 253, 0.08)',
+      'light-500': '0px 6px 14px -6px rgba(228, 241, 253, 0.12), 0px 10px 32px -4px rgba(228, 241, 253, 0.10)',
+      'light-600': '0px 8px 18px -6px rgba(228, 241, 253, 0.12), 0px 12px 42px -4px rgba(228, 241, 253, 0.12)',
+      'light-700': '0px 8px 22px -6px rgba(228, 241, 253, 0.12), 0px 14px 64px -4px rgba(228, 241, 253, 0.12)',
+      'light-800': '0px 8px 28px -6px rgba(228, 241, 253, 0.12), 0px 18px 88px -4px rgba(228, 241, 253, 0.14)',
     },
     colors: {
       black: '#000000',
@@ -96,8 +77,7 @@ const config: Config = {
     },
     extend: {
       backgroundImage: {
-        'gradient-radial':
-          'radial-gradient(38.04% 75.07% at 48.61% 57.34%, #ADC1C7 0%, #E4F1FD 100%)',
+        'gradient-radial': 'radial-gradient(38.04% 75.07% at 48.61% 57.34%, #ADC1C7 0%, #E4F1FD 100%)',
       },
       spacing: {
         '3xs': '2px',
@@ -164,34 +144,73 @@ const config: Config = {
     function ({ addBase, theme }: PluginAPI) {
       addBase({
         h1: {
-          fontSize: theme('fontSize.h1'),
-          fontWeight: theme('fontWeight.semi-bold'),
-          fontFamily: theme('fontFamily.title'),
+          fontSize: theme?.('fontSize.h1') || ['64px', '80px'],
+          fontWeight: theme?.('fontWeight.semi-bold') || '550',
+          fontFamily: theme?.('fontFamily.title') || ['Cairo', 'sans-serif'],
         },
         h2: {
-          fontSize: theme('fontSize.h2'),
-          fontWeight: theme('fontWeight.normal'),
-          fontFamily: theme('fontFamily.title'),
+          fontSize: theme?.('fontSize.h2') || ['48px', '64px'],
+          fontWeight: theme?.('fontWeight.normal') || '400',
+          fontFamily: theme?.('fontFamily.title') || ['Cairo', 'sans-serif'],
         },
         h3: {
-          fontSize: theme('fontSize.h3'),
-          fontWeight: theme('fontWeight.semi-bold'),
-          fontFamily: theme('fontFamily.title'),
+          fontSize: theme?.('fontSize.h3') || ['32px', '40px'],
+          fontWeight: theme?.('fontWeight.semi-bold') || '550',
+          fontFamily: theme?.('fontFamily.title') || ['Cairo', 'sans-serif'],
         },
         p: {
-          fontSize: theme('fontSize.text'),
-          fontWeight: theme('fontWeight.normal'),
-          fontFamily: theme('fontFamily.body'),
+          fontSize: theme?.('fontSize.text') || ['21px', '32px'],
+          fontWeight: theme?.('fontWeight.normal') || '400',
+          fontFamily: theme?.('fontFamily.body') || ['Cairo', 'sans-serif'],
         },
-        [`@media (max-width: ${theme('screens.phablet')})`]: {
-          '.text-subtext': theme('fontSize.subtext-sm'),
-          '.text-text': theme('fontSize.text-sm'),
-          '.text-h3': theme('fontSize.h3-sm'),
-          '.text-h2': theme('fontSize.h2-sm'),
-          '.text-h1': theme('fontSize.h1-sm'),
+        
+        '@media (max-width: 425px)': {
+          '.text-subtext': { fontSize:'14px' },
+          '.text-text': { fontSize: '16px' },
+          '.text-h3': { fontSize:'20px' },
+          '.text-h2': { fontSize:'24px' },
+          '.text-h1': { fontSize:'32px' },
+          'h1': { fontSize: '32px' },
+          'h2': { fontSize: '24px' },
+          'h3': { fontSize: '20px' },
+          'p': { fontSize: '16px' },
+        },
+        '@media (min-width: 425px) and (max-width: 767px)': {
+          '.text-subtext': { fontSize: '16px' },
+          '.text-text': { fontSize: '18px' },
+          '.text-h3': { fontSize: '24px' },
+          '.text-h2': { fontSize:'32px' },
+          '.text-h1': { fontSize: '40px' },
+          'h1': { fontSize: '40px' },
+          'h2': { fontSize: '32px' },
+          'h3': { fontSize: '24px' },
+          'p': { fontSize: '18px' },
+        },
+        '@media (min-width: 768px) and (max-width: 1279px)': {
+          '.text-subtext': { fontSize: '16px' },
+          '.text-text': { fontSize:'20px' },
+          '.text-h3': { fontSize:'28px' },
+          '.text-h2': { fontSize:'36px' },
+          '.text-h1': { fontSize:'48px' },
+          'h1': { fontSize: '48px' },
+          'h2': { fontSize: '36px' },
+          'h3': { fontSize: '28px' },
+          'p': { fontSize: '20px' },
+        },
+        '@media (min-width: 1280px)': {
+          '.text-subtext': { fontSize:'16px' },
+          '.text-text': { fontSize: '21px' },
+          '.text-h3': {fontSize: '32px' },
+          '.text-h2': {fontSize: '48px' },
+          '.text-h1': {fontSize: '64px' },
+          'h1': { fontSize: '64px' },
+          'h2': { fontSize: '48px' },
+          'h3': { fontSize: '32px' },
+          'p': { fontSize: '21px' },
         },
       });
     },
   ],
 };
+
 export default config;

@@ -1,13 +1,26 @@
-import { SVGProps } from 'react';
+import { ExpandedSvgProps } from './SVGWrapper';
+import { cn } from '../../lib/cn';
 
-const Instagram = ({ ...props }: SVGProps<SVGSVGElement>) => {
+const Instagram = ({ className, size, ...props }: ExpandedSvgProps) => {
+  let custom_class: string = 'w-3 h-3 stroke-1';
+  switch (size) {
+    case 'small':
+      custom_class = 'w-2 h-2 stroke-1';
+      break;
+    case 'large':
+      custom_class = 'w-5 h-5 stroke-2';
+      break;
+    default:
+      break;
+  }
+
   return (
     <svg
       width="24"
       height="24"
-      fill="none"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
+      className={cn(className, custom_class)}
       {...props}
     >
       <path

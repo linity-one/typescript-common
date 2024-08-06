@@ -20,11 +20,11 @@ const config: Config = {
     container: {
       screens: {
         desktop: '1504px',
-        laptop: '11120px',
+        laptop: '1120px',
         vertical: '864px',
         tablet: '672px',
         phablet: '584px',
-        mobile: '328px',
+        mobile: '312px',
       },
     },
     fontWeight: {

@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'cva';
 import { cn } from '@/common/lib/cn';
 
 export const ButtonVariants = cva(
-  'font-button text-h3 flex flex-row items-center gap-1 transition-colors duration-300',
+  'font-button text-text flex flex-row items-center gap-1 transition-colors duration-300',
   {
     variants: {
       variant: {

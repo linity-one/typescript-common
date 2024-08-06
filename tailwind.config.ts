@@ -15,7 +15,7 @@ const config: Config = {
       vertical: '1024px',
       tablet: '768px',
       phablet: '640px',
-      mobile: '360px',
+      mobile: '330px',
     },
     fontWeight: {
       normal: '400',

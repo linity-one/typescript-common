@@ -17,6 +17,16 @@ const config: Config = {
       phablet: '640px',
       mobile: '330px',
     },
+    container: {
+      screens: {
+        desktop: '1504px',
+        laptop: '11120px',
+        vertical: '864px',
+        tablet: '672px',
+        phablet: '584px',
+        mobile: '328px',
+      },
+    },
     fontWeight: {
       normal: '400',
       'semi-bold': '550',

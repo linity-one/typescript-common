@@ -5,8 +5,8 @@ const X = ({ ...props }: ExpandedSvgProps) => {
     <SVGWrapper {...props}>
       <path
         d="M4 6L20 6M4 12L20 12M4 18H20"
-        stroke-linecap="square"
-        stroke-linejoin="round"
+        strokeLinecap="square"
+        strokeLinejoin="round"
       />
     </SVGWrapper>
   );

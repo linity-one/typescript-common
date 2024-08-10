@@ -14,19 +14,10 @@ const config: Config = {
       laptop: '1280px',
       vertical: '1024px',
       tablet: '768px',
-      phablet: '640px',
+      phablet: '560px',
       mobile: '330px',
     },
-    container: {
-      screens: {
-        desktop: '1504px',
-        laptop: '1120px',
-        vertical: '864px',
-        tablet: '672px',
-        phablet: '584px',
-        mobile: '312px',
-      },
-    },
+    fontSize: {},
     fontWeight: {
       normal: '400',
       'semi-bold': '550',
@@ -163,74 +154,76 @@ const config: Config = {
       },
     },
   },
+  corePlugins: {
+    container: false,
+  },
   plugins: [
     require('@tailwindcss/forms'),
     function ({ addBase, theme }: PluginAPI) {
       addBase({
         h1: {
-          fontSize: theme?.('fontSize.h1') || ['64px', '80px'],
           fontWeight: theme?.('fontWeight.semi-bold') || '550',
           fontFamily: theme?.('fontFamily.title') || ['Cairo', 'sans-serif'],
         },
         h2: {
-          fontSize: theme?.('fontSize.h2') || ['48px', '64px'],
           fontWeight: theme?.('fontWeight.normal') || '400',
           fontFamily: theme?.('fontFamily.title') || ['Cairo', 'sans-serif'],
         },
         h3: {
-          fontSize: theme?.('fontSize.h3') || ['32px', '40px'],
           fontWeight: theme?.('fontWeight.semi-bold') || '550',
           fontFamily: theme?.('fontFamily.title') || ['Cairo', 'sans-serif'],
         },
         p: {
-          fontSize: theme?.('fontSize.text') || ['21px', '32px'],
-          fontWeight: theme?.('fontWeight.normal') || '400',
-          fontFamily: theme?.('fontFamily.body') || ['Cairo', 'sans-serif'],
+          fontWeight: theme('fontWeight.normal') || '400',
+          fontFamily: theme('fontFamily.body') || ['Cairo', 'sans-serif'],
         },
-
-        '@media (max-width: 425px)': {
-          '.text-subtext': { fontSize: '14px' },
-          '.text-text': { fontSize: '16px' },
-          '.text-h3': { fontSize: '20px' },
-          '.text-h2': { fontSize: '24px' },
-          '.text-h1': { fontSize: '32px' },
-          h1: { fontSize: '32px' },
-          h2: { fontSize: '24px' },
-          h3: { fontSize: '20px' },
-          p: { fontSize: '16px' },
+        [`@media (min-width: ${theme('screens.tablet')})`]: {
+          '.text-subtext': { fontSize: '16px', lineHeight: '24px' },
+          '.text-text': { fontSize: '21px', lineHeight: '32px' },
+          '.text-h3': { fontSize: '32px', lineHeight: '40px' },
+          '.text-h2': { fontSize: '48px', lineHeight: '64px' },
+          '.text-h1': { fontSize: '64px', lineHeight: '80px' },
+          h1: { fontSize: '64px', lineHeight: '80px' },
+          h2: { fontSize: '48px', lineHeight: '64px' },
+          h3: { fontSize: '32px', lineHeight: '40px' },
+          p: { fontSize: '21px', lineHeight: '32px' },
         },
-        '@media (min-width: 425px) and (max-width: 767px)': {
-          '.text-subtext': { fontSize: '16px' },
-          '.text-text': { fontSize: '18px' },
-          '.text-h3': { fontSize: '24px' },
-          '.text-h2': { fontSize: '32px' },
-          '.text-h1': { fontSize: '40px' },
-          h1: { fontSize: '40px' },
-          h2: { fontSize: '32px' },
-          h3: { fontSize: '24px' },
-          p: { fontSize: '18px' },
+        [`@media (max-width: ${theme('screens.tablet')})`]: {
+          '.text-subtext': { fontSize: '10px', lineHeight: '16px' },
+          '.text-text': { fontSize: '16px', lineHeight: '24px' },
+          '.text-h3': { fontSize: '21px', lineHeight: '32px' },
+          '.text-h2': { fontSize: '32px', lineHeight: '40px' },
+          '.text-h1': { fontSize: '48px', lineHeight: '64px' },
+          h1: { fontSize: '48px', lineHeight: '64px' },
+          h2: { fontSize: '32px', lineHeight: '40px' },
+          h3: { fontSize: '21px', lineHeight: '32px' },
+          p: { fontSize: '16px', lineHeight: '24px' },
         },
-        '@media (min-width: 768px) and (max-width: 1279px)': {
-          '.text-subtext': { fontSize: '16px' },
-          '.text-text': { fontSize: '20px' },
-          '.text-h3': { fontSize: '28px' },
-          '.text-h2': { fontSize: '36px' },
-          '.text-h1': { fontSize: '48px' },
-          h1: { fontSize: '48px' },
-          h2: { fontSize: '36px' },
-          h3: { fontSize: '28px' },
-          p: { fontSize: '20px' },
-        },
-        '@media (min-width: 1280px)': {
-          '.text-subtext': { fontSize: '16px' },
-          '.text-text': { fontSize: '21px' },
-          '.text-h3': { fontSize: '32px' },
-          '.text-h2': { fontSize: '48px' },
-          '.text-h1': { fontSize: '64px' },
-          h1: { fontSize: '64px' },
-          h2: { fontSize: '48px' },
-          h3: { fontSize: '32px' },
-          p: { fontSize: '21px' },
+      });
+    },
+    function ({ addComponents }: PluginAPI) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          minWidth: '312px',
+          '@screen mobile': {
+            maxWidth: '312px',
+          },
+          '@screen phablet': {
+            maxWidth: '520px',
+          },
+          '@screen tablet': {
+            maxWidth: '672px',
+          },
+          '@screen vertical': {
+            maxWidth: '864px',
+          },
+          '@screen laptop': {
+            maxWidth: '1120px',
+          },
+          '@screen desktop': {
+            maxWidth: '1504px',
+          },
         },
       });
     },

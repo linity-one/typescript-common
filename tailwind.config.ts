@@ -89,9 +89,7 @@ const config: Config = {
         'gradient-radial':
           'radial-gradient(38.04% 75.07% at 48.61% 57.34%, #ADC1C7 0%, #E4F1FD 100%)',
         'gradient-gunmetal-white':
-          'linear-gradient(to right, #28333A 50%, #ffffff 50%)',
-        'gradient-gunmetal-white-b':
-          'linear-gradient(to bottom, #28333A 65%, #ffffff 35%)',
+          'linear-gradient(to right, #28333A 25%, #ffffff 25%)',
       },
       keyframes: {
         'marquise-dt': {
@@ -219,6 +217,7 @@ const config: Config = {
           h2: { fontSize: '48px', lineHeight: '64px' },
           h3: { fontSize: '32px', lineHeight: '40px' },
           p: { fontSize: '21px', lineHeight: '32px' },
+          label: { fontSize: '16px', lineHeight: '24px' },
         },
         [`@media (max-width: ${theme('screens.tablet')})`]: {
           '.text-subtext': { fontSize: '10px', lineHeight: '16px' },
@@ -230,6 +229,7 @@ const config: Config = {
           h2: { fontSize: '32px', lineHeight: '40px' },
           h3: { fontSize: '21px', lineHeight: '32px' },
           p: { fontSize: '16px', lineHeight: '24px' },
+          label: { fontSize: '10px', lineHeight: '16px' },
         },
       });
     },

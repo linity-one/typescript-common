@@ -66,6 +66,28 @@ const config: Config = {
     colors: {
       black: '#000000',
       white: '#FFFFFF',
+      primary: {
+        50: '#F1F8FE',
+        100: '#E4F1FD', //cloud
+        200: '#C9D9E2',
+        300: '#ADC1C7', //storm
+        400: '#778F9B', //slate
+        500: '#5B737F',
+        600: '#496571',
+        700: '#40555E', //outer Space
+        800: '#3A4950',
+        900: '#343F45',
+        950: '#28333A', //gunmetal
+      },
+      accent: {
+        DEFAULT: '#DDDE59',
+        primary: '#DDDE59',
+        'primary-hover': '#E9EC9C',
+      },
+      success: '#008A00',
+      warning: '#EE8A00',
+      alert: '#EE0000',
+      //to be replaced (depreceated)
       gunmetal: {
         DEFAULT: '#28333A',
         950: '#28333A',
@@ -80,9 +102,6 @@ const config: Config = {
         DEFAULT: '#DDDE59',
         hover: '#E9EC9C',
       },
-      success: '#198038',
-      warning: '#ff832b',
-      alert: '#da1e28',
     },
     extend: {
       backgroundImage: {

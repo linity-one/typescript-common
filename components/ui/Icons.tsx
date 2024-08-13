@@ -23,6 +23,7 @@ import Goal from '../svg/goal';
 import Heart from '../svg/heart';
 import Profile from '../svg/profile';
 import Settings from '../svg/settings';
+import Learn from '../svg/learn';
 
 const IconsVariants = cva('', {
   variants: {
@@ -98,6 +99,10 @@ export const ChevronRightIcon: FC<IconsProps> = ({ size, color }) => {
 
 export const AddFriendIcon: FC<IconsProps> = ({ size, color }) => {
   return <AddFriend size={size} className={cn(IconsVariants({ color }))} />;
+};
+
+export const LearnIcon: FC<IconsProps> = ({ size, color }) => {
+  return <Learn size={size} className={cn(IconsVariants({ color }))} />;
 };
 
 export const BookmarkIcon: FC<IconsProps> = ({ size, color }) => {

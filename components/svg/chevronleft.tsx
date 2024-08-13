@@ -6,7 +6,6 @@ const Chevronleft = ({ ...props }: ExpandedSvgProps) => {
       <path
         d="M15 19L8 12L15 5"
         stroke="currentColor"
-        strokeWidth="2"
         strokeLinecap="square"
         strokeLinejoin="bevel"
       />

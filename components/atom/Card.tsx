@@ -1,22 +1,22 @@
-import { FC, ReactNode } from 'react';
-import { cva, VariantProps } from 'cva';
-import { cn } from '@/common/lib/cn';
+import { FC, ReactNode } from "react";
+import { cva, VariantProps } from "cva";
+import { cn } from "@/common/lib/cn";
 
-const CardVariants = cva('shadow-xl rounded-xl px-8 py-4 w-full', {
+const CardVariants = cva("shadow-xl rounded-xl px-8 py-4 w-full", {
   variants: {
     variant: {
-      clean: 'bg-white text-gunmetal',
-      highlight: 'bg-cloud',
+      clean: "bg-white text-gunmetal",
+      highlight: "bg-cloud",
     },
     size: {
-      unsized: '',
-      standard: 'h-50',
+      unsized: "",
+      standard: "h-50",
     },
   },
   compoundVariants: [],
   defaultVariants: {
-    variant: 'clean',
-    size: 'standard',
+    variant: "clean",
+    size: "standard",
   },
 });
 

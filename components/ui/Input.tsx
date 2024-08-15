@@ -1,17 +1,17 @@
-import { FC, forwardRef, InputHTMLAttributes } from 'react';
-import { cva, VariantProps } from 'cva';
-import { cn } from '../../lib/cn';
+import { FC, forwardRef, InputHTMLAttributes } from "react";
+import { cva, VariantProps } from "cva";
+import { cn } from "../../lib/cn";
 
-const InputVariants = cva('', {
+const InputVariants = cva("", {
   variants: {
     variant: {
-      primary: '',
-      secondary: '',
+      primary: "",
+      secondary: "",
     },
   },
   compoundVariants: [],
   defaultVariants: {
-    variant: 'primary',
+    variant: "primary",
   },
 });
 
@@ -33,6 +33,6 @@ const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
   },
 );
 
-Input.displayName = 'Input';
+Input.displayName = "Input";
 
 export default Input;

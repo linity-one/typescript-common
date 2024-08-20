@@ -109,6 +109,14 @@ const config: Config = {
           'radial-gradient(38.04% 75.07% at 48.61% 57.34%, #ADC1C7 0%, #E4F1FD 100%)',
         'gradient-gunmetal-white':
           'linear-gradient(to right, #28333A 25%, #ffffff 25%)',
+        'gradient-cloud':
+          'radial-gradient(rgba(241, 248, 254, 0.4), rgba(201, 217, 226, 0.4)),' +
+          'linear-gradient(' +
+          '    -45deg,' +
+          '    rgba(201, 217, 226, 0.4) 0%,' +
+          '    rgba(228, 241, 253, 0) 30%,' +
+          '    rgba(241, 248, 254, 0.4) 65%,' +
+          '    rgba(228, 241, 253, 0) 100%)',
       },
       keyframes: {
         'marquise-dt': {

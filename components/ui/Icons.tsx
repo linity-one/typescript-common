@@ -24,6 +24,7 @@ import Heart from '../svg/heart';
 import Profile from '../svg/profile';
 import Settings from '../svg/settings';
 import Learn from '../svg/learn';
+import ChevronRight from '../svg/chevronright';
 
 const IconsVariants = cva('', {
   variants: {
@@ -94,7 +95,7 @@ export const ChevronLeftIcon: FC<IconsProps> = ({ size, color }) => {
 };
 
 export const ChevronRightIcon: FC<IconsProps> = ({ size, color }) => {
-  return <Chevronleft size={size} className={cn(IconsVariants({ color }))} />;
+  return <ChevronRight size={size} className={cn(IconsVariants({ color }))} />;
 };
 
 export const AddFriendIcon: FC<IconsProps> = ({ size, color }) => {

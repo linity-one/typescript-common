@@ -1,52 +1,52 @@
-import { ButtonHTMLAttributes, FC, forwardRef } from "react";
-import { cva, VariantProps } from "cva";
-import { cn } from "@/common/lib/cn";
+import { ButtonHTMLAttributes, FC, forwardRef } from 'react';
+import { cva, VariantProps } from 'cva';
+import { cn } from '@/common/lib/cn';
 
 export const ButtonVariants = cva(
-  "font-button text-text flex flex-row items-center gap-1 transition-colors duration-300",
+  'font-button text-text flex flex-row items-center gap-1 transition-colors duration-300',
   {
     variants: {
       variant: {
-        primary: "",
-        secondary: "",
+        primary: '',
+        secondary: '',
       },
       size: {
-        sm: "text-subtext px-md py-xxs rounded-sm",
-        md: "px-2 py-xs text-text rounded-md",
+        sm: 'text-subtext px-md py-xxs rounded-sm',
+        md: 'px-2 py-xs text-text rounded-md',
       },
       theme: {
-        dark: "",
-        light: "",
+        dark: '',
+        light: '',
       },
     },
     compoundVariants: [
       {
-        variant: "primary",
-        theme: "dark",
-        className: "bg-gunmetal hover:bg-gunmetal-800 text-lime",
+        variant: 'primary',
+        theme: 'dark',
+        className: 'bg-gunmetal hover:bg-gunmetal-800 text-lime',
       },
       {
-        variant: "primary",
-        theme: "light",
-        className: "bg-lime hover:bg-lime-hover text-gunmetal",
+        variant: 'primary',
+        theme: 'light',
+        className: 'bg-lime hover:bg-lime-hover text-gunmetal',
       },
       {
-        variant: "secondary",
-        theme: "dark",
+        variant: 'secondary',
+        theme: 'dark',
         className:
-          "border border-gunmetal text-gunmetal hover:bg-gunmetal hover:text-cloud",
+          'border border-gunmetal text-gunmetal hover:bg-gunmetal hover:text-cloud',
       },
       {
-        variant: "secondary",
-        theme: "light",
+        variant: 'secondary',
+        theme: 'light',
         className:
-          "bg-gunmetal border border-cloud text-cloud hover:bg-cloud hover:text-gunmetal",
+          'bg-gunmetal border border-cloud text-cloud hover:bg-cloud hover:text-gunmetal',
       },
     ],
     defaultVariants: {
-      variant: "primary",
-      size: "md",
-      theme: "dark",
+      variant: 'primary',
+      size: 'md',
+      theme: 'dark',
     },
   },
 );
@@ -69,6 +69,6 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
   },
 );
 
-Button.displayName = "Button";
+Button.displayName = 'Button';
 
 export default Button;

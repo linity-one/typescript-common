@@ -1,14 +1,14 @@
-import { ExpandedSvgProps } from "./SVGWrapper";
-import { cn } from "../../lib/cn";
+import { ExpandedSvgProps } from './SVGWrapper';
+import { cn } from '../../lib/cn';
 
 const Instagram = ({ className, size, ...props }: ExpandedSvgProps) => {
-  let custom_class: string = "w-3 h-3 stroke-1";
+  let custom_class: string = 'w-3 h-3 stroke-1';
   switch (size) {
-    case "small":
-      custom_class = "w-2 h-2 stroke-1";
+    case 'small':
+      custom_class = 'w-2 h-2 stroke-1';
       break;
-    case "large":
-      custom_class = "w-5 h-5 stroke-2";
+    case 'large':
+      custom_class = 'w-5 h-5 stroke-2';
       break;
     default:
       break;

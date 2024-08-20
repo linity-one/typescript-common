@@ -1,22 +1,22 @@
-import React from "react";
-import { cva, VariantProps } from "cva";
+import React from 'react';
+import { cva, VariantProps } from 'cva';
 
 export const svgVariants = cva(
-  "transition-all ease duration-300", // Base classes for transition
+  'transition-all ease duration-300', // Base classes for transition
   {
     variants: {
       size: {
-        small: "w-2 h-2 stroke-1",
-        default: "w-3 h-3 stroke-2",
-        large: "w-5 h-5 stroke-3",
+        small: 'w-2 h-2 stroke-1',
+        default: 'w-3 h-3 stroke-2',
+        large: 'w-5 h-5 stroke-3',
       },
       animations: {
-        none: "",
+        none: '',
       },
     },
     defaultVariants: {
-      size: "default",
-      animations: "none",
+      size: 'default',
+      animations: 'none',
     },
   },
 );

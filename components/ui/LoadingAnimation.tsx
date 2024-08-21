@@ -36,6 +36,7 @@ const LoadingAnimation: FC<loadingAnimationProps> = forwardRef<
         //d="M334.595 334.588H375.405V0.594604C368.646 0.215436 361.845 0 355 0H354.81C348.026 0 341.284 0.215436 334.595 0.594604L334.595 334.588Z"
         d="M375.405 230.361V0.594604C368.646 0.215436 361.845 0 355 0H354.81C348.026 0 341.284 0.215436 334.595 0.594604V230.361H375.405Z"
         fill="currentColor"
+        opacity="0"
         style={{
           transform: `rotate(${i * 22.5}deg)`, // 360 / 16 = 22.5 degrees
           transformOrigin: 'center',

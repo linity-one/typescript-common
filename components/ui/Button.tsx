@@ -13,6 +13,7 @@ export const ButtonVariants = cva(
       size: {
         sm: 'text-subtext px-md py-xxs rounded-sm',
         md: 'px-2 py-xs text-text rounded-md',
+        lg: 'px',
       },
       theme: {
         dark: '',

@@ -5,7 +5,7 @@ this is how the input works
     import InputWrapper from '@/common/ui/InputWrapper';
     import InputSubtext from '@/common/ui/InputSubtext';
     import Button from '@/common/ui/Button';
-    
+
     export default function Page() {
     function onChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.value == 'ok') {
@@ -14,7 +14,7 @@ this is how the input works
     e.target.setCustomValidity('Please select ok');
     }
     }
-    
+
     return (
     <main>
     <form

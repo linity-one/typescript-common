@@ -12,7 +12,6 @@ const InputVariants = cva(
     variants: {
       variant: {
         primary: '',
-        secondary: '',
       },
     },
     compoundVariants: [],

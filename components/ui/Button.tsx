@@ -3,17 +3,18 @@ import { cva, VariantProps } from 'cva';
 import { cn } from '@/common/lib/cn';
 
 export const ButtonVariants = cva(
-  'font-button text-text flex flex-row items-center gap-1 transition-colors duration-300',
+  'font-button font-semi-bold flex flex-row items-center transition-colors duration-300',
   {
     variants: {
       variant: {
         primary: '',
         secondary: '',
+        tertiary: '',
       },
       size: {
-        sm: 'text-subtext px-md py-xxs rounded-sm',
-        md: 'px-2 py-xs text-text rounded-md',
-        lg: 'px',
+        sm: 'px-md py-xxs text-subtext  rounded-sm gap-1',
+        md: 'px-2 py-xs text-text rounded-md gap-1.5',
+        lg: 'px-5 py-1.5 text-h3 rounded-md gap-2',
       },
       theme: {
         dark: '',
@@ -24,24 +25,37 @@ export const ButtonVariants = cva(
       {
         variant: 'primary',
         theme: 'dark',
-        className: 'bg-gunmetal hover:bg-gunmetal-800 text-lime',
+        className: 'bg-primary-950 hover:bg-primary-800 text-accent-primary',
       },
       {
         variant: 'primary',
         theme: 'light',
-        className: 'bg-lime hover:bg-lime-hover text-gunmetal',
+        className:
+          'bg-accent-primary hover:bg-accent-primary-hover text-gunmetal',
       },
       {
         variant: 'secondary',
         theme: 'dark',
         className:
-          'border border-gunmetal text-gunmetal hover:bg-gunmetal hover:text-cloud',
+          'border border-primary-950 text-primary-950 hover:bg-primary-950 hover:text-primary-100',
       },
       {
         variant: 'secondary',
         theme: 'light',
         className:
-          'bg-gunmetal border border-cloud text-cloud hover:bg-cloud hover:text-gunmetal',
+          'border border-primary-100 text-primary-100 hover:bg-primary-100 hover:text-primary-950',
+      },
+      {
+        variant: 'tertiary',
+        theme: 'dark',
+        className:
+          'bg-primary-100 hover:bg-primary-200 text-primary-600 hover:text-primary-950',
+      },
+      {
+        variant: 'tertiary',
+        theme: 'light',
+        className:
+          'bg-primary-700 hover:bg-primary-600 text-primary-200 hover:text-primary-100',
       },
     ],
     defaultVariants: {

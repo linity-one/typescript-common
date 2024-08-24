@@ -2,12 +2,12 @@ import { FC, forwardRef, HTMLAttributes } from 'react';
 import { cva, VariantProps } from 'cva';
 
 const InputSubtextVariants = cva(
-  'block order-5 text-subtext text-primary-600 peer-focus:text-primary-950',
+  'block order-3 text-subtext text-primary-600 peer-focus:text-primary-950',
   {
     variants: {
       variant: {
         standard: 'peer-invalid:hidden peer-disabled:hidden',
-        error: 'hidden peer-invalid:inline-block',
+        error: 'hidden peer-invalid:block',
       },
       theme: {
         light: '',

@@ -1,15 +1,17 @@
 import React, { FC, forwardRef } from 'react';
 import { cva, VariantProps } from 'cva';
+import { hidden } from 'next/dist/lib/picocolors';
 
 export const loadingAnimationVariants = cva(
   '', // Base classes for transition
   {
     variants: {
       size: {
-        small: 'w-2 h-2',
-        default: 'w-3 h-3',
-        large: 'w-5 h-5',
-        fullscreen: 'w-20 h-20',
+        small: 'w-2 h-2 text-primary-950',
+        default: 'w-3 h-3 text-primary-950',
+        large: 'w-5 h-5 text-primary-950',
+        fullscreen:
+          'z-20 text-cloud w-24 h-24 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2',
       },
     },
     defaultVariants: {
@@ -47,17 +49,18 @@ const LoadingAnimation: FC<loadingAnimationProps> = forwardRef<
   }
 
   return (
-    <svg
-      className={loadingAnimationVariants({ size, className })}
-      {...props}
-      ref={ref}
-      viewBox="0 0 710 710"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {bars}
-      <style>
-        {`
+    <>
+      <svg
+        className={loadingAnimationVariants({ size, className })}
+        {...props}
+        ref={ref}
+        viewBox="0 0 710 710"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {bars}
+        <style>
+          {`
           @keyframes fade {
             0% { opacity: 1; }
             20% { opacity: 0.4; }
@@ -65,8 +68,16 @@ const LoadingAnimation: FC<loadingAnimationProps> = forwardRef<
             100% { opacity: 0; }
           }
         `}
-      </style>
-    </svg>
+        </style>
+      </svg>
+      <div
+        className={
+          size == 'fullscreen'
+            ? 'z-10 bg-gunmetal opacity-50 absolute h-screen w-screen top-0 left-0'
+            : 'hidden'
+        }
+      />
+    </>
   );
 });
 

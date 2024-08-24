@@ -1,11 +1,11 @@
 import { FC, forwardRef, LabelHTMLAttributes } from 'react';
 import { cva, VariantProps } from 'cva';
 
-const labelVariants = cva('text-text peer-focus:text-alert order-1', {
+const labelVariants = cva('text-text order-1', {
   variants: {
     theme: {
       dark: 'text-primary-600 peer-focus:text-primary-950',
-      light: 'text-primary-200',
+      light: 'text-primary-200 peer-focus:text-primary-100',
     },
   },
   compoundVariants: [],

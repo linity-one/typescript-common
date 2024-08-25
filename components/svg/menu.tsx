@@ -1,4 +1,4 @@
-import SVGWrapper, { ExpandedSvgProps } from './SVGWrapper';
+import SVGWrapper, { ExpandedSvgProps } from "./SVGWrapper";
 
 const Menu = ({ ...props }: ExpandedSvgProps) => {
   return (

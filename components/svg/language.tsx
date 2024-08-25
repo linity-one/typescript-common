@@ -1,5 +1,5 @@
-import { SVGProps } from 'react';
-import SVGWrapper, { ExpandedSvgProps } from './SVGWrapper';
+import { SVGProps } from "react";
+import SVGWrapper, { ExpandedSvgProps } from "./SVGWrapper";
 
 const Language = ({ ...props }: ExpandedSvgProps) => {
   return (

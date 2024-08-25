@@ -26,7 +26,8 @@
       "@/common/molecule/*": ["./typescript-common/components/molecule/*"],
       //normal path
       "@/components/*": ["./src/components/*"],
-      "@/providers/*": ["./src/components/providers/*"]
+      "@/providers/*": ["./src/components/providers/*"],
+      "@/lib/*": ["./src/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

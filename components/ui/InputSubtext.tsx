@@ -1,22 +1,22 @@
-import { FC, forwardRef, HTMLAttributes } from 'react';
-import { cva, VariantProps } from 'cva';
+import { FC, forwardRef, HTMLAttributes } from "react";
+import { cva, VariantProps } from "cva";
 
 const InputSubtextVariants = cva(
-  'block order-3 text-subtext text-primary-600 peer-focus:text-primary-950',
+  "block order-3 text-subtext text-primary-600 peer-focus:text-primary-950",
   {
     variants: {
       variant: {
-        standard: 'peer-invalid:hidden peer-disabled:hidden',
-        error: 'hidden peer-invalid:block',
+        standard: "peer-invalid:hidden peer-disabled:hidden",
+        error: "hidden peer-invalid:block",
       },
       theme: {
-        light: '',
-        dark: '',
+        light: "",
+        dark: "",
       },
     },
     compoundVariants: [],
     defaultVariants: {
-      variant: 'standard',
+      variant: "standard",
     },
   },
 );
@@ -40,6 +40,6 @@ const InputSubtext: FC<InputSubtextProps> = forwardRef<
   );
 });
 
-InputSubtext.displayName = 'InputSubtext';
+InputSubtext.displayName = "InputSubtext";
 
 export default InputSubtext;

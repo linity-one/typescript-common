@@ -3,8 +3,8 @@ import {
   ListboxButton,
   ListboxOption,
   ListboxOptions,
-} from '@headlessui/react';
-import { FC, useState } from 'react';
+} from "@headlessui/react";
+import { FC, useState } from "react";
 
 interface ListboxProps {
   listValues: string[];
@@ -17,12 +17,12 @@ const Listbox: FC<ListboxProps> = ({ listValues, placeholderText }) => {
   return (
     <HeadlessListbox onChange={setSelectedValue}>
       <ListboxButton className="peer order-2 rounded-md border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row gap-0.5">
-        <span className={selectedValue ? 'text-primary-950' : ''}>
+        <span className={selectedValue ? "text-primary-950" : ""}>
           {selectedValue
             ? selectedValue
             : placeholderText
               ? placeholderText
-              : 'select something'}
+              : "select something"}
         </span>
       </ListboxButton>
       <ListboxOptions className="relative">

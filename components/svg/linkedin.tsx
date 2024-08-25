@@ -1,14 +1,14 @@
-import { cn } from '../../lib/cn';
-import { ExpandedSvgProps } from './SVGWrapper';
+import { cn } from "../../lib/cn";
+import { ExpandedSvgProps } from "./SVGWrapper";
 
 const Linkedin = ({ className, size, ...props }: ExpandedSvgProps) => {
-  let custom_class: string = 'w-3 h-3';
+  let custom_class: string = "w-3 h-3";
   switch (size) {
-    case 'small':
-      custom_class = 'w-2 h-2 ';
+    case "small":
+      custom_class = "w-2 h-2 ";
       break;
-    case 'large':
-      custom_class = 'w-5 h-5';
+    case "large":
+      custom_class = "w-5 h-5";
       break;
     default:
       break;

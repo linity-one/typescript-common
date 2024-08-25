@@ -1,16 +1,16 @@
-import { FC, forwardRef, LabelHTMLAttributes } from 'react';
-import { cva, VariantProps } from 'cva';
+import { FC, forwardRef, LabelHTMLAttributes } from "react";
+import { cva, VariantProps } from "cva";
 
-const labelVariants = cva('text-text order-1', {
+const labelVariants = cva("text-text order-1", {
   variants: {
     theme: {
-      dark: 'text-primary-600 peer-focus:text-primary-950',
-      light: 'text-primary-200 peer-focus:text-primary-100',
+      dark: "text-primary-600 peer-focus:text-primary-950",
+      light: "text-primary-200 peer-focus:text-primary-100",
     },
   },
   compoundVariants: [],
   defaultVariants: {
-    theme: 'dark',
+    theme: "dark",
   },
 });
 
@@ -32,6 +32,6 @@ const label: FC<labelProps> = forwardRef<HTMLLabelElement, labelProps>(
   },
 );
 
-label.displayName = 'label';
+label.displayName = "label";
 
 export default label;

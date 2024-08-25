@@ -1,4 +1,4 @@
-import SVGWrapper, { ExpandedSvgProps } from './SVGWrapper';
+import SVGWrapper, { ExpandedSvgProps } from "./SVGWrapper";
 
 const Goal = ({ ...props }: ExpandedSvgProps) => {
   return (

@@ -1,55 +1,55 @@
-import { FC } from 'react';
-import { cva, VariantProps } from 'cva';
-import { cn } from '@/common/lib/cn';
-import Linkedin from '../svg/linkedin';
-import Location from '../svg/location';
-import Mail from '../svg/mail';
-import Social from '../svg/social';
-import Language from '../svg/language';
-import Search from '../svg/search';
-import { SvgVariantsProps } from '../svg/SVGWrapper';
-import Instagram from '../svg/instagram';
-import X from '../svg/x';
-import Menu from '../svg/menu';
-import Chevronup from '../svg/chevronup';
-import ChevronDown from '../svg/chevrondown';
-import Chevronleft from '../svg/chevronleft';
-import AddFriend from '../svg/addfriend';
-import Bookmark from '../svg/bookmark';
-import Chat from '../svg/chat';
-import Comment from '../svg/comment';
-import Create from '../svg/create';
-import Goal from '../svg/goal';
-import Heart from '../svg/heart';
-import Profile from '../svg/profile';
-import Settings from '../svg/settings';
-import Learn from '../svg/learn';
-import ChevronRight from '../svg/chevronright';
-import Logout from '../svg/logout';
-import Success from '../svg/success';
-import Error from '../svg/error';
-import Alert from '../svg/alert';
-import Info from '../svg/info';
-import Plus from '../svg/plus';
-import Aicreate from '../svg/aicreate';
-import Image from '../svg/image';
-import Video from '../svg/video';
-import Audio from '../svg/audio';
+import { FC } from "react";
+import { cva, VariantProps } from "cva";
+import { cn } from "@/common/lib/cn";
+import Linkedin from "../svg/linkedin";
+import Location from "../svg/location";
+import Mail from "../svg/mail";
+import Social from "../svg/social";
+import Language from "../svg/language";
+import Search from "../svg/search";
+import { SvgVariantsProps } from "../svg/SVGWrapper";
+import Instagram from "../svg/instagram";
+import X from "../svg/x";
+import Menu from "../svg/menu";
+import Chevronup from "../svg/chevronup";
+import ChevronDown from "../svg/chevrondown";
+import Chevronleft from "../svg/chevronleft";
+import AddFriend from "../svg/addfriend";
+import Bookmark from "../svg/bookmark";
+import Chat from "../svg/chat";
+import Comment from "../svg/comment";
+import Create from "../svg/create";
+import Goal from "../svg/goal";
+import Heart from "../svg/heart";
+import Profile from "../svg/profile";
+import Settings from "../svg/settings";
+import Learn from "../svg/learn";
+import ChevronRight from "../svg/chevronright";
+import Logout from "../svg/logout";
+import Success from "../svg/success";
+import Error from "../svg/error";
+import Alert from "../svg/alert";
+import Info from "../svg/info";
+import Plus from "../svg/plus";
+import Aicreate from "../svg/aicreate";
+import Image from "../svg/image";
+import Video from "../svg/video";
+import Audio from "../svg/audio";
 
-const IconsVariants = cva('', {
+const IconsVariants = cva("", {
   variants: {
     variant: {
-      outline: 'text-gunmetal',
+      outline: "text-gunmetal",
     },
   },
   compoundVariants: [],
   defaultVariants: {
-    variant: 'outline',
+    variant: "outline",
   },
 });
 
 interface IconsProps extends VariantProps<typeof IconsVariants> {
-  size: SvgVariantsProps['size'];
+  size: SvgVariantsProps["size"];
   className?: string;
 }
 

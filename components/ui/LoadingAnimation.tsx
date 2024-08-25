@@ -1,21 +1,21 @@
-import React, { FC, forwardRef } from 'react';
-import { cva, VariantProps } from 'cva';
-import { hidden } from 'next/dist/lib/picocolors';
+import React, { FC, forwardRef } from "react";
+import { cva, VariantProps } from "cva";
+import { hidden } from "next/dist/lib/picocolors";
 
 export const loadingAnimationVariants = cva(
-  '', // Base classes for transition
+  "", // Base classes for transition
   {
     variants: {
       size: {
-        small: 'w-2 h-2 text-primary-950',
-        default: 'w-3 h-3 text-primary-950',
-        large: 'w-5 h-5 text-primary-950',
+        small: "w-2 h-2 text-primary-950",
+        default: "w-3 h-3 text-primary-950",
+        large: "w-5 h-5 text-primary-950",
         fullscreen:
-          'z-20 text-cloud w-24 h-24 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2',
+          "z-20 text-cloud w-24 h-24 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2",
       },
     },
     defaultVariants: {
-      size: 'default',
+      size: "default",
     },
   },
 );
@@ -41,7 +41,7 @@ const LoadingAnimation: FC<loadingAnimationProps> = forwardRef<
         opacity="0"
         style={{
           transform: `rotate(${i * 22.5}deg)`, // 360 / 16 = 22.5 degrees
-          transformOrigin: 'center',
+          transformOrigin: "center",
           animation: `fade ${animation_time}s ${(i * animation_time) / 16}s infinite cubic-bezier(0.42, 0, 0.58, 1)`,
         }}
       />,
@@ -72,15 +72,15 @@ const LoadingAnimation: FC<loadingAnimationProps> = forwardRef<
       </svg>
       <div
         className={
-          size == 'fullscreen'
-            ? 'z-10 bg-gunmetal opacity-50 absolute h-screen w-screen top-0 left-0'
-            : 'hidden'
+          size == "fullscreen"
+            ? "z-10 bg-gunmetal opacity-50 absolute h-screen w-screen top-0 left-0"
+            : "hidden"
         }
       />
     </>
   );
 });
 
-LoadingAnimation.displayName = 'LoadingAnimation';
+LoadingAnimation.displayName = "LoadingAnimation";
 
 export default LoadingAnimation;

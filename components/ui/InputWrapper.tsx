@@ -1,7 +1,7 @@
 import { FC, forwardRef, HTMLAttributes } from "react";
 import { cva, VariantProps } from "cva";
 
-const InputWrapperVariants = cva("flex", {
+export const InputWrapperVariants = cva("flex", {
   variants: {
     variant: {
       vertical: "flex-col gap-0.5 min-h-14",

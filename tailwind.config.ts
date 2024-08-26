@@ -86,7 +86,7 @@ const config: Config = {
       },
       success: "#008A00",
       warning: "#EE8A00",
-      alert: "#EE0000",
+      error: "#EE0000",
       //to be replaced (depreceated)
       gunmetal: {
         DEFAULT: "#28333A",

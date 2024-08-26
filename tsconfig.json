@@ -24,6 +24,7 @@
       "@/common/ui/*": ["./typescript-common/components/ui/*"],
       "@/common/atom/*": ["./typescript-common/components/atom/*"],
       "@/common/molecule/*": ["./typescript-common/components/molecule/*"],
+      "@/common/toast/*": ["./typescript-common/components/toast/*"],
       //normal path
       "@/components/*": ["./src/components/*"],
       "@/providers/*": ["./src/components/providers/*"],

@@ -24,9 +24,9 @@ const Modal: FC<ModalProps> = ({
 }) => {
   return (
     <Dialog open={isOpen} onClose={() => close()}>
-      <DialogBackdrop className="fixed inset-0 bg-primary-950/50" />
+      <DialogBackdrop className="fixed inset-0 bg-primary-950/60" />
       <div className="fixed flex inset-0 w-screen items-center justify-center p-8">
-        <DialogPanel className="flex flex-col gap-2 min-w-60 bg-primary-100 w-fit p-xl rounded-xl">
+        <DialogPanel className="flex flex-col gap-2 min-w-60 bg-white w-fit p-xl rounded-xl">
           <div className="flex flex-row justify-between">
             <DialogTitle as="h3">{title}</DialogTitle>
             <div onClick={() => close()}>

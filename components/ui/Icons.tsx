@@ -80,7 +80,7 @@ export const LogoutIcon: FC<IconsProps> = ({ size, variant, className }) => {
   );
 };
 
-export const SucessIcon: FC<IconsProps> = ({ size, variant, className }) => {
+export const SuccessIcon: FC<IconsProps> = ({ size, variant, className }) => {
   return (
     <Success
       size={size}

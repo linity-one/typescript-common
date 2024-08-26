@@ -40,6 +40,7 @@ const IconsVariants = cva("", {
   variants: {
     variant: {
       outline: "text-gunmetal",
+      outlineSidenav:'text-cloud group-hover:text-gunmetal'
     },
   },
   compoundVariants: [],

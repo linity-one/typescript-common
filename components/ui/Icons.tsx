@@ -35,12 +35,13 @@ import Aicreate from "../svg/aicreate";
 import Image from "../svg/image";
 import Video from "../svg/video";
 import Audio from "../svg/audio";
+import Check from "../svg/check";
 
 const IconsVariants = cva("", {
   variants: {
     variant: {
-      outline: "text-gunmetal",
-      outlineSidenav:'text-cloud group-hover:text-gunmetal'
+      outline: "",
+      outlineSidenav: "text-cloud group-hover:text-gunmetal",
     },
   },
   compoundVariants: [],
@@ -307,5 +308,11 @@ export const VideoIcon: FC<IconsProps> = ({ size, variant, className }) => {
 export const AudioIcon: FC<IconsProps> = ({ size, variant, className }) => {
   return (
     <Audio size={size} className={cn(IconsVariants({ variant, className }))} />
+  );
+};
+
+export const CheckIcon: FC<IconsProps> = ({ size, variant, className }) => {
+  return (
+    <Check size={size} className={cn(IconsVariants({ variant, className }))} />
   );
 };

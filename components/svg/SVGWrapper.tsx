@@ -6,7 +6,7 @@ export const svgVariants = cva(
   {
     variants: {
       size: {
-        small: "min-w-2 w-2 min-h-2 h-2 stroke-1",
+        small: "min-w-2 w-2 min-h-2 h-2 stroke-[1.5px]",
         default: "min-w-3 w-3 min-h-3 h-3 stroke-2",
         large: "min-w-5 w-5 min-h-5 h-5 stroke-3",
       },

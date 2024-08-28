@@ -1,11 +1,10 @@
 import SVGWrapper, { ExpandedSvgProps } from "./SVGWrapper";
 
-const Success = ({ ...props }: ExpandedSvgProps) => {
+const Alert = ({ ...props }: ExpandedSvgProps) => {
   return (
     <SVGWrapper {...props}>
-      <circle cx="12" cy="12" r="8" stroke="currentColor" />
       <path
-        d="M8.5 11.5L11 14L15.5 9.5"
+        d="M5 13L9 17L19 7"
         stroke="currentColor"
         strokeLinecap="square"
         strokeLinejoin="bevel"
@@ -14,4 +13,4 @@ const Success = ({ ...props }: ExpandedSvgProps) => {
   );
 };
 
-export default Success;
+export default Alert;

@@ -34,7 +34,7 @@ const Tag: FC<TagProps> = forwardRef<HTMLDivElement, TagProps>(
           TagVariants({ theme, className }),
           closeCallback ? "cursor-pointer" : "",
         )}
-        onClick={() => closeCallback? closeCallback() : {}}
+        onClick={() => (closeCallback ? closeCallback() : {})}
         {...props}
       >
         <span className="text-subtext">{children}</span>

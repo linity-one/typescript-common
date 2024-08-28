@@ -1,11 +1,12 @@
 import { FC, forwardRef, HTMLAttributes } from "react";
 import { cva, VariantProps } from "cva";
+import { Field } from "@headlessui/react";
 
 export const InputWrapperVariants = cva("flex", {
   variants: {
     variant: {
       vertical: "flex-col gap-0.5 min-h-14",
-      horizontal: "flex-row gap-1",
+      horizontal: "flex-row gap-1 items-center",
     },
   },
   compoundVariants: [],
@@ -18,20 +19,18 @@ interface InputWrapperProps
   extends HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof InputWrapperVariants> {}
 
-const InputWrapper: FC<InputWrapperProps> = forwardRef<
-  HTMLDivElement,
-  InputWrapperProps
->(({ className, variant, children, ...props }, ref) => {
+const InputWrapper: FC<InputWrapperProps> = ({
+  className,
+  variant,
+  children,
+  ...props
+}) => {
   return (
-    <div
-      ref={ref}
-      className={InputWrapperVariants({ variant, className })}
-      {...props}
-    >
+    <Field className={InputWrapperVariants({ variant, className })} {...props}>
       {children}
-    </div>
+    </Field>
   );
-});
+};
 
 InputWrapper.displayName = "InputWrapper";
 

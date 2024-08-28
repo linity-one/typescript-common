@@ -1,5 +1,6 @@
 import { FC, forwardRef, LabelHTMLAttributes } from "react";
 import { cva, VariantProps } from "cva";
+import { Label } from "@headlessui/react";
 
 const labelVariants = cva("text-text order-1", {
   variants: {
@@ -21,13 +22,13 @@ interface labelProps
 const label: FC<labelProps> = forwardRef<HTMLLabelElement, labelProps>(
   ({ className, children, theme, ...props }, ref) => {
     return (
-      <label
+      <Label
         ref={ref}
         className={labelVariants({ theme, className })}
         {...props}
       >
         {children}
-      </label>
+      </Label>
     );
   },
 );

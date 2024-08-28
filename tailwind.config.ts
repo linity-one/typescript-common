@@ -36,6 +36,7 @@ const config: Config = {
       md: "8px",
       lg: "16px",
       xl: "24px",
+      full: "9999px",
     },
     boxShadow: {
       100: "0px 2px 4px -2px rgba(40, 51, 58, 0.12), 0px 4px 4px -2px rgba(40, 51, 58, 0.08)",
@@ -175,6 +176,7 @@ const config: Config = {
         14: "112px",
         15: "120px",
         16: "128px",
+        17: "136px",
         18: "144px",
         20: "160px",
         21: "168px",

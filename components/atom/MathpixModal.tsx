@@ -1,24 +1,30 @@
-//old code from the old codebase
-
-
 'use client'
 import React, {useState, FC} from 'react';
-import Button from "@/ui/Button";
-import Modal from "@/ui/Modal";
-import Title from "@/ui/Title";
-import {CubeTransparentIcon} from "@heroicons/react/24/solid";
-import {image_to_latex} from "@/lib/mathpix/fetch";
-import {toast} from "sonner";
-import {create_explanation} from "@/lib/backend/explanation";
+import {image_to_latex} from "./MathpixModal/fetch";
+import {VariantProps} from "cva";
+import Button, {ButtonVariants} from "../ui/Button";
+import Modal from "./Modal";
+import FileInput from "../ui/FileInput";
+import {AICreateIcon} from "../ui/Icons";
+import {promiseToast} from "../toast/toast";
+import {locale, localized_string} from "../../lib/localized";
 
 
+const display_data : {modal_text:localized_string, subtext:localized_string,button_Text:localized_string} =
+    {
+        modal_text: {en:'upload your file'},
+        button_Text:{en:'convert'},
+        subtext: {en:'all usual image types are accepted'},
+    }
 
-interface MathpixModalProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    callback?: (text: string) => void
+interface MathpixModalProps extends  React.ButtonHTMLAttributes<HTMLButtonElement> {
+    callback?: (text: string) => Promise<void>
+    buttonVariants?: VariantProps<typeof ButtonVariants>
+    locale?: locale
 }
 
 
-const MathpixModal: FC<MathpixModalProps> = ({callback}) => {
+const MathpixModal: FC<MathpixModalProps> = ({locale='en',callback, buttonVariants:{variant,size} = {theme:'dark',variant:'tertiary'}}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [file, setFile] = useState<File|null>(null);
 
@@ -36,23 +42,29 @@ const MathpixModal: FC<MathpixModalProps> = ({callback}) => {
     };
 
     const handleUpload = async () => {
-        closeModal()
         if (file == null) {
             return
         }
         let prom =  image_to_latex(file).then(
             value => {
-                callback ? callback(value) : {}
+                callback ? callback(value).then(
+                    ()  =>  {
+                        closeModal()
+                    },
+                    reason => {
+                        throw reason
+                    }
+                ) : {}
 
             },
             reason => {
                 throw reason
             }
         )
-        toast.promise( prom, {
-                loading: 'Loading...',
-                success: () => {return 'picture has been converted'},
-                error: () => {return 'Oops... '}
+        promiseToast( prom, {
+                pending: 'Loading...',
+                success: 'picture has been converted',
+                error:  'Oops... '
             }
         )
 
@@ -61,34 +73,18 @@ const MathpixModal: FC<MathpixModalProps> = ({callback}) => {
     return (
         <>
             <Button
+                variant={variant}
+                size={size}
                 type={"button"}
                 onClick={openModal}
             >
-                <span className={'mr-2'}>Create from picture</span>
-                <CubeTransparentIcon className="h-5 w-5" aria-hidden="true" />
+                Create from picture
+                <AICreateIcon aria-hidden="true"  size='default'/>
             </Button>
 
-            <Modal isOpen={isOpen} close={()=>setIsOpen(false)}>
-                <Title
-                    as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
-                >
-                    Upload File
-                </Title>
-
-                <div className="mt-2">
-                    <input type="file" onChange={handleFileChange}/>
-                </div>
-
-                <div className="mt-4">
-                    <button
-                        type="button"
-                        className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                        onClick={handleUpload}
-                    >
-                        Submit
-                    </button>
-                </div>
+            <Modal  title={display_data.modal_text[locale]!} isOpen={isOpen} close={closeModal} >
+                <FileInput className='mb-1' fileIcons={['jpg','png']} subtext={display_data.subtext[locale]!}/>
+                <Button onClick={handleUpload} className='w-full'>{display_data.button_Text[locale]!}</Button>
             </Modal>
         </>
     );

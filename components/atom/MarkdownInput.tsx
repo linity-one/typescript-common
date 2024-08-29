@@ -1,106 +1,48 @@
-//old code from the old codebase
-
-
 'use client'
-import {FC, forwardRef, TextareaHTMLAttributes, useState} from 'react'
-import {useController, UseFormRegisterReturn} from "react-hook-form";
-import {Tab} from '@headlessui/react'
-import { AtSymbolIcon, CodeBracketIcon, LinkIcon } from '@heroicons/react/20/solid'
-import {cn} from "@/lib/cn";
-import Button, {buttonVariants} from "@/ui/Button";
-import {CubeTransparentIcon} from "@heroicons/react/24/solid";
-import FieldLabel from "@/ui/FieldLabel";
-import Markdown from "@/ui/Markdown";
-import FieldError from "@/ui/FieldError";
-import FieldDescription from "@/ui/FieldDescription";
-import Textarea from "@/ui/Textarea";
-import MathpixModal from "@/component/atoms/MathPixModal";
+import {FC, useState} from 'react'
+import { Field, Tab} from '@headlessui/react'
+import Markdown from "../ui/Markdown";
+import InputSubtext from "../ui/InputSubtext";
+import Textfield from "../ui/Textfield";
+import {locale, localized_string} from "../../lib/localized";
+import Switch from "./Switch";
+import MathpixModal from "./MathpixModal";
+import Label from "../ui/Label";
+
+
+const display_data: {preview_text:localized_string, button_text:localized_string} =
+    {
+        button_text: {en:'create from Image'},
+        preview_text: {en:'preview'}
+    }
 
 interface  MarkdownTextareaGroupProps {
     className?:string
     name:string
     label:string
-    errormsg?:string
-    description?:string
+    subtext?:string
+    locale?:locale
 }
 
 const MarkdownTextareaGroup:FC<MarkdownTextareaGroupProps> =
-    ({className, name,label,errormsg,description}) => {
+    ({locale='en', name,label,subtext}) => {
 
-        const { field: { onChange, value,  ref, onBlur,disabled } } = useController(
-            {name: name}
-        );
+        const [preview, setPreview] = useState(false)
+        const [value,setValue] = useState('')
 
-        return <div className={className}>
-            <Tab.Group>
-                {({ selectedIndex }) => (
-                    <>
-                        {/*Area for the tabs and actions on top start here*/}
-                        <Tab.List className="flex gap-x-4 items-center">
-                            <FieldLabel htmlFor={name}>{label}</FieldLabel>
-                            <Tab
-                                className={({ selected }) =>
-                                    cn(
-                                        selected
-                                            ? buttonVariants({variant:'active',size:'sm'})
-                                            : buttonVariants({variant:'soft',size:'sm'}),
-                                        ''
-                                    )
-                                }
-                            >
-                                Write
-                            </Tab>
-                            <Tab
-                                className={({ selected }) =>
-                                    cn(
-                                        selected
-                                            ? buttonVariants({variant:'active',size:'sm'})
-                                            : buttonVariants({variant:'soft',size:'sm'}),
-                                        ''
-                                    )
-                                }
-                            >
-                                Preview
-                            </Tab>
-
-                            {selectedIndex === 0 ? (
-                                <div className="ml-auto flex items-center space-x-5">
-                                    <MathpixModal callback={onChange} />
-                                </div>
-                            ) : null}
-                        </Tab.List>
-                        {/*Area for the Panels starts here*/}
-                        <Tab.Panels className="mt-2">
-                            {/*Editor*/}
-                            <Tab.Panel className="-m-0.5 rounded-lg p-0.5">
-                                <Textarea
-                                    ref={ref}
-                                    onBlur={onBlur}
-                                    disabled={disabled}
-                                    rows={5}
-                                    id={name}
-                                    placeholder="Add your Latex..."
-                                    value={value}
-                                    onChange={e => {
-                                        onChange(e.target.value)
-                                    }}
-                                />
-                            </Tab.Panel>
-                            {/*Viewer*/}
-                            <Tab.Panel >
-                                <div className="my-4 pb-4 border-b">
-                                    <Markdown rawText={value} />
-                                </div>
-                            </Tab.Panel>
-                        </Tab.Panels>
-                    </>
-                )}
-            </Tab.Group>
-            {errormsg ?
-                <FieldError>{errormsg}</FieldError> :
-                <FieldDescription>{description}</FieldDescription>
-            }
-        </div>
+        return <Field data-preview={preview?false:null} className='group flex flex-col gap-1.5'>
+            <div className='order-2 flex flex-row justify-between items-center'>
+                <MathpixModal  buttonVariants={{variant:'tertiary',size:'sm'}} callback={async (mathpix_string) => setValue(value + mathpix_string )}/>
+                <Field className='flex flex-row gap-1.5 items-center'>
+                    <Label>{display_data.preview_text[locale]}</Label>
+                    <Switch on_callback={async () => setPreview(true)} off_callback={async () => setPreview(false)} />
+                </Field>
+            </div>
+            <Textfield  value={value} onChange={(e) => {setValue(e.target.value)}} className='order-3 group-data-[preview]:hidden'></Textfield>
+            <Markdown    className='w-full py-3 px-2 shadow-600 h-10 hidden order-3 group-data-[preview]:block' rawText={value} />
+            <Label className={'order-1'}></Label>
+            <InputSubtext className='order-4 group-data-[preview]:hidden' >{subtext}</InputSubtext>
+        </Field>
     }
 
 MarkdownTextareaGroup.displayName = "MarkdownTextareaGroup"

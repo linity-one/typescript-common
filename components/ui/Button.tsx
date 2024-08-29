@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, FC, forwardRef } from "react";
 import { cva, VariantProps } from "cva";
-import { cn } from "@/common/lib/cn";
+import { cn } from '@/common/lib/cn';
 
 export const ButtonVariants = cva(
   "font-button font-semi-bold flex flex-row items-center justify-center transition-colors duration-300",

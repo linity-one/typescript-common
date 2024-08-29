@@ -83,7 +83,7 @@ const MathpixModal: FC<MathpixModalProps> = ({locale='en',callback, buttonVarian
             </Button>
 
             <Modal  title={display_data.modal_text[locale]!} isOpen={isOpen} close={closeModal} >
-                <FileInput className='mb-1' fileIcons={['jpg','png']} subtext={display_data.subtext[locale]!}/>
+                <FileInput onChange={handleFileChange} className='mb-1' fileIcons={['jpg','png']} subtext={display_data.subtext[locale]!}/>
                 <Button onClick={handleUpload} className='w-full'>{display_data.button_Text[locale]!}</Button>
             </Modal>
         </>

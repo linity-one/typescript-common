@@ -30,11 +30,23 @@ interface FileInputProps
     VariantProps<typeof FileInputVariants> {
   fileIcons: fileName[];
   locale?: locale;
-  subtext: string
+  subtext: string;
 }
 
 const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
-  ({locale='en',subtext,fileIcons, className, onChange, type, theme, ...props }, ref) => {
+  (
+    {
+      locale = "en",
+      subtext,
+      fileIcons,
+      className,
+      onChange,
+      type,
+      theme,
+      ...props
+    },
+    ref,
+  ) => {
     const [files, setFiles] = useState<FileList | null>(null);
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       console.log(event);
@@ -63,13 +75,22 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
             {...props}
           />
           <div className="flex flex-row mx-auto w-fit">
-              {fileIcons.map((file,idx) => (
-                  <FileIcon theme={theme?theme:undefined} fileName={file} key={idx} />
-              ))}
+            {fileIcons.map((file, idx) => (
+              <FileIcon
+                theme={theme ? theme : undefined}
+                fileName={file}
+                key={idx}
+              />
+            ))}
           </div>
           <div className="text-center top-0 right-0 left-0 m-auto  text-primary-600">
-            <p >{display_data.drop_your_files_text[locale]}<span className={'font-bold'}>{display_data.bold_word[locale]}</span></p>
-              <p className='text-subtext '>{subtext}</p>
+            <p>
+              {display_data.drop_your_files_text[locale]}
+              <span className={"font-bold"}>
+                {display_data.bold_word[locale]}
+              </span>
+            </p>
+            <p className="text-subtext ">{subtext}</p>
           </div>
         </div>
         {files && files.length > 0 && (

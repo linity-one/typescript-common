@@ -62,7 +62,7 @@ const icons = {
   },
 };
 
-const FileIcon: FC<FileIconProps> = ({ theme = 'dark', fileName }) => {
+const FileIcon: FC<FileIconProps> = ({ theme = "dark", fileName }) => {
   const selectedIcon = icons[theme][fileName];
 
   return (

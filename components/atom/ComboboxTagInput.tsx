@@ -30,6 +30,8 @@ interface ComboboxTagInputProps<X>
   name?: string;
   label?: string;
   subtext?: string;
+  value?: X[];
+  onChange?: (value: X[]) => void;
 }
 
 const ComboboxTagInput = <X,>({
@@ -39,10 +41,12 @@ const ComboboxTagInput = <X,>({
   variant,
   placeholderText,
   autocompleteFunctions,
+  value = [],
+  onChange = () => {},
 }: ComboboxTagInputProps<X>) => {
   const [query, setQuery] = useState("");
   const [dropdownItems, setDropdownItems] = useState<X[]>([]);
-  const [selectedItems, setSelectedItems] = useState<X[]>([]);
+  const [selectedItems, setSelectedItems] = useState<X[]>(value);
 
   useEffect(() => {
     query === ""
@@ -54,19 +58,25 @@ const ComboboxTagInput = <X,>({
 
   const removeIndexFromSelectedItems = (item: X) => {
     infoToast("removed item:" + autocompleteFunctions.renderFunction(item));
-    setSelectedItems(
-      selectedItems.filter((val) => {
-        return !(val === item);
-      }),
-    );
+    const updatedItems = selectedItems.filter((val) => val !== item);
+    setSelectedItems(updatedItems);
+    onChange(updatedItems);
   };
+
 
   const inputRef = useRef<HTMLInputElement>(null);
 
   const selectOption = (el: X[]) => {
-    setSelectedItems([...el]);
+
+    const updatedItems = [
+      ...selectedItems,
+      ...el.filter((newItem) => !selectedItems.includes(newItem)),
+    ];
+  
+    setSelectedItems(updatedItems);
     setQuery("");
     inputRef.current?.focus();
+    onChange(updatedItems);
   };
 
   return (

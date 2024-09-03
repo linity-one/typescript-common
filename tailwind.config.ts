@@ -236,6 +236,10 @@ const config: Config = {
           fontWeight: theme("fontWeight.normal") || "400",
           fontFamily: theme("fontFamily.body") || ["Cairo", "sans-serif"],
         },
+        label: {
+          fontWeight: theme("fontWeight.normal") || "400",
+          fontFamily: theme("fontFamily.body") || ["Cairo", "sans-serif"],
+        },
         [`@media (min-width: ${theme("screens.tablet")})`]: {
           ".text-subtext": { fontSize: "16px", lineHeight: "24px" },
           ".text-text": { fontSize: "21px", lineHeight: "32px" },
@@ -246,7 +250,7 @@ const config: Config = {
           h2: { fontSize: "48px", lineHeight: "64px" },
           h3: { fontSize: "32px", lineHeight: "40px" },
           p: { fontSize: "21px", lineHeight: "32px" },
-          label: { fontSize: "16px", lineHeight: "24px" },
+          label: { fontSize: "21px", lineHeight: "32px" },
         },
         [`@media (max-width: ${theme("screens.tablet")})`]: {
           ".text-subtext": { fontSize: "10px", lineHeight: "16px" },

@@ -1,6 +1,9 @@
 import { ButtonHTMLAttributes, FC, forwardRef } from "react";
 import { cva, VariantProps } from "cva";
 import { cn } from "@/common/lib/cn";
+import LoadingAnimation from "./LoadingAnimation";
+import {toast} from "react-toastify";
+import loading = toast.loading;
 
 export const ButtonVariants = cva(
   "font-button font-semi-bold flex flex-row items-center justify-center transition-colors duration-300",
@@ -68,16 +71,19 @@ export const ButtonVariants = cva(
 
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof ButtonVariants> {}
+    VariantProps<typeof ButtonVariants> {
+    loading?:boolean
+}
 
 const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, className, variant, theme, size, ...props }, ref) => {
+  ({loading, children, className, variant, theme, size, ...props }, ref) => {
     return (
       <button
         ref={ref}
         className={cn(ButtonVariants({ variant, size, theme }), className)}
         {...props}
       >
+          <LoadingAnimation className={loading? 'absolute' : 'hidden'} size={ size=='sm' ? 'small' : size == 'md' ? 'default' : 'large'} />
         {children}
       </button>
     );

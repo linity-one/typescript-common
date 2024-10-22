@@ -12,7 +12,7 @@ interface ModalProps {
   close: () => void;
   className?: string;
   children: ReactNode;
-  title: string;
+  title?: string;
 }
 
 const Modal: FC<ModalProps> = ({
@@ -28,7 +28,7 @@ const Modal: FC<ModalProps> = ({
       <div className="fixed flex inset-0 w-screen items-center justify-center p-8">
         <DialogPanel className="flex flex-col gap-2 min-w-60 bg-white w-fit p-xl rounded-xl">
           <div className="flex flex-row justify-between">
-            <DialogTitle as="h3">{title}</DialogTitle>
+              {title && <DialogTitle as="h3">{title}</DialogTitle>}
             <div onClick={() => close()}>
               {" "}
               <XIcon className="hover:scale-125" size="large" />

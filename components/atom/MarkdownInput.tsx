@@ -25,8 +25,6 @@ interface MarkdownTextareaGroupProps {
   locale?: locale;
   value?: string;
   onChange?: (value: string) => void;
-
-  
 }
 
 const MarkdownTextareaGroup: FC<MarkdownTextareaGroupProps> = ({
@@ -35,11 +33,9 @@ const MarkdownTextareaGroup: FC<MarkdownTextareaGroupProps> = ({
   label,
   subtext,
   value = "",
-  onChange = () => {}, 
-  
+  onChange = () => {},
 }) => {
   const [preview, setPreview] = useState(false);
-
 
   return (
     <Field
@@ -47,11 +43,9 @@ const MarkdownTextareaGroup: FC<MarkdownTextareaGroupProps> = ({
       className="group flex flex-col gap-1.5"
     >
       <div className="order-2 flex flex-row justify-between items-center">
-      <MathpixModal
+        <MathpixModal
           buttonVariants={{ variant: "tertiary", size: "sm" }}
-          callback={async (mathpix_string) =>
-            onChange(value + mathpix_string)
-          }
+          callback={async (mathpix_string) => onChange(value + mathpix_string)}
         />
         <Field className="flex flex-row gap-1.5 items-center">
           <Label>{display_data.preview_text[locale]}</Label>

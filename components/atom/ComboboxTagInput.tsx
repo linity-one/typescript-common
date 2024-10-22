@@ -3,10 +3,6 @@ import {
   Description,
   Field,
   Label,
-  Listbox as HeadlessListbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
 } from "@headlessui/react";
 import { FC, useEffect, useRef, useState } from "react";
 import { InputWrapperVariants } from "../ui/InputWrapper";
@@ -63,16 +59,14 @@ const ComboboxTagInput = <X,>({
     onChange(updatedItems);
   };
 
-
   const inputRef = useRef<HTMLInputElement>(null);
 
   const selectOption = (el: X[]) => {
-
     const updatedItems = [
       ...selectedItems,
       ...el.filter((newItem) => !selectedItems.includes(newItem)),
     ];
-  
+
     setSelectedItems(updatedItems);
     setQuery("");
     inputRef.current?.focus();

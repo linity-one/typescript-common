@@ -40,7 +40,8 @@ export const ListboxSelect: FC<ListboxProps> = ({
           </Label>
           <ListboxButton className="items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between">
             <span className={value ? "text-primary-950" : ""}>
-              {value || (placeholderText ? placeholderText : "select something")}
+              {value ||
+                (placeholderText ? placeholderText : "select something")}
             </span>
             <ChevronDownIcon size={"default"} aria-hidden="true" />
           </ListboxButton>
@@ -49,7 +50,7 @@ export const ListboxSelect: FC<ListboxProps> = ({
             transition
             className={cn(
               "w-[var(--button-width)] bg-white [--anchor-gap:var(--spacing-1)] focus:outline-none",
-              "transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0"
+              "transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0",
             )}
           >
             {listValues.map((listValue) => (

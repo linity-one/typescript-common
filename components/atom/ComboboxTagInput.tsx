@@ -1,9 +1,4 @@
-import {
-  Combobox,
-  Description,
-  Field,
-  Label,
-} from "@headlessui/react";
+import { Combobox, Description, Field, Label } from "@headlessui/react";
 import { FC, useEffect, useRef, useState } from "react";
 import { InputWrapperVariants } from "../ui/InputWrapper";
 import { VariantProps } from "cva";

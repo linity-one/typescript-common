@@ -24,7 +24,7 @@ const Markdown: FC<MarkdownProps> = forwardRef<
     unified()
       .use(remarkParse)
       //.use(remarkGfm)
-      .use(remarkMath,{singleDollarTextMath:true})
+      .use(remarkMath, { singleDollarTextMath: true })
       .use(remarkRehype)
       .use(rehypeSanitize, {
         ...defaultSchema,
@@ -42,19 +42,18 @@ const Markdown: FC<MarkdownProps> = forwardRef<
       });
   }, [rawText]);
   //debug
-    useEffect(() => {
-        const ast = unified()
-            .use(remarkParse)
-            .use(remarkMath,{singleDollarTextMath:false})
-            .parse(rawText)
-        console.log(ast)
+  useEffect(() => {
+    const ast = unified()
+      .use(remarkParse)
+      .use(remarkMath, { singleDollarTextMath: false })
+      .parse(rawText);
+    console.log(ast);
 
-     unified()
-            .use(remarkRehype)
-            .run(ast)
-            .then( (root) => console.log(root))
-    }, [rawText]);
-
+    unified()
+      .use(remarkRehype)
+      .run(ast)
+      .then((root) => console.log(root));
+  }, [rawText]);
 
   // Potential security risk with `dangerouslySetInnerHTML`
   return (

@@ -2,8 +2,6 @@ import { ButtonHTMLAttributes, FC, forwardRef } from "react";
 import { cva, VariantProps } from "cva";
 import { cn } from "@/common/lib/cn";
 import LoadingAnimation from "./LoadingAnimation";
-import { toast } from "react-toastify";
-import loading = toast.loading;
 
 export const ButtonVariants = cva(
   "font-button font-semi-bold flex flex-row items-center justify-center transition-colors duration-300",

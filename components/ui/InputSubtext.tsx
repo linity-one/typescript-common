@@ -3,7 +3,7 @@ import { cva, VariantProps } from "cva";
 import { Description } from "@headlessui/react";
 
 const InputSubtextVariants = cva(
-  "block order-3 text-subtext text-primary-600 peer-focus:text-primary-950",
+  "block order-3 text-subtext transition-colors duration-300",
   {
     variants: {
       variant: {
@@ -11,8 +11,8 @@ const InputSubtextVariants = cva(
         error: "hidden peer-invalid:block",
       },
       theme: {
-        light: "",
-        dark: "",
+        dark: "text-primary-600 peer-focus:text-primary-950",
+        light: "text-primary-200 peer-focus:text-primary-100",
       },
     },
     compoundVariants: [],
@@ -29,11 +29,11 @@ interface InputSubtextProps
 const InputSubtext: FC<InputSubtextProps> = forwardRef<
   HTMLSpanElement,
   InputSubtextProps
->(({ variant, className, children, ...props }, ref) => {
+>(({ variant,theme, className, children, ...props }, ref) => {
   return (
     <Description
       as="span"
-      className={InputSubtextVariants({ variant, className })}
+      className={InputSubtextVariants({ variant,theme, className })}
       ref={ref}
       {...props}
     >

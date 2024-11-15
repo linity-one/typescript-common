@@ -2,7 +2,7 @@ import { FC, forwardRef, LabelHTMLAttributes } from "react";
 import { cva, VariantProps } from "cva";
 import { Label } from "@headlessui/react";
 
-const labelVariants = cva("text-text order-1", {
+const labelVariants = cva("text-text order-1 transition-colors duration-300", {
   variants: {
     theme: {
       dark: "text-primary-600 peer-focus:text-primary-950",

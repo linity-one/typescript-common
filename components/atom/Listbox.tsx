@@ -1,6 +1,5 @@
 import {
   Field,
-  Label,
   Listbox,
   ListboxButton,
   ListboxOption,
@@ -11,6 +10,8 @@ import { InputWrapperVariants } from "../ui/InputWrapper";
 import { VariantProps } from "cva";
 import { CheckIcon, ChevronDownIcon } from "../ui/Icons";
 import { cn } from "../../lib/cn";
+import Label from "../ui/Label";
+import InputSubtext from "../ui/InputSubtext";
 
 interface ListboxProps extends VariantProps<typeof InputWrapperVariants> {
   listValues: string[];
@@ -20,31 +21,36 @@ interface ListboxProps extends VariantProps<typeof InputWrapperVariants> {
   subtext?: string;
   value?: string;
   onChange?: (value: string) => void;
+  theme: 'light' | 'dark';
 }
 
 export const ListboxSelect: FC<ListboxProps> = ({
   name,
+    label,
+    subtext,
   placeholderText,
   variant,
   listValues,
   value,
   onChange,
+    theme
 }) => {
   const className = "gap-0";
   return (
     <Field>
       <Listbox name={name} value={value} onChange={onChange}>
         <div className={InputWrapperVariants({ variant, className })}>
-          <Label className="mb-0.5 text-text font-body text-primary-600 data-[open]:text-primary-950">
-            this is the label
-          </Label>
-          <ListboxButton className="items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between">
+
+          <ListboxButton className="order-2 items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white">
             <span className={value ? "text-primary-950" : ""}>
               {value ||
                 (placeholderText ? placeholderText : "select something")}
             </span>
             <ChevronDownIcon size={"default"} aria-hidden="true" />
           </ListboxButton>
+            <Label theme={theme}>
+                {label}
+            </Label>
           <ListboxOptions
             anchor="bottom"
             transition
@@ -67,9 +73,9 @@ export const ListboxSelect: FC<ListboxProps> = ({
               </ListboxOption>
             ))}
           </ListboxOptions>
-          <span className="text-subtext text-primary-600">
-            this is a subtext
-          </span>
+          <InputSubtext theme={theme}>
+            {subtext}
+          </InputSubtext>
         </div>
       </Listbox>
     </Field>

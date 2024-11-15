@@ -29,11 +29,11 @@ interface InputSubtextProps
 const InputSubtext: FC<InputSubtextProps> = forwardRef<
   HTMLSpanElement,
   InputSubtextProps
->(({ variant,theme, className, children, ...props }, ref) => {
+>(({ variant, theme, className, children, ...props }, ref) => {
   return (
     <Description
       as="span"
-      className={InputSubtextVariants({ variant,theme, className })}
+      className={InputSubtextVariants({ variant, theme, className })}
       ref={ref}
       {...props}
     >

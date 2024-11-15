@@ -21,26 +21,25 @@ interface ListboxProps extends VariantProps<typeof InputWrapperVariants> {
   subtext?: string;
   value?: string;
   onChange?: (value: string) => void;
-  theme: 'light' | 'dark';
+  theme: "light" | "dark";
 }
 
 export const ListboxSelect: FC<ListboxProps> = ({
   name,
-    label,
-    subtext,
+  label,
+  subtext,
   placeholderText,
   variant,
   listValues,
   value,
   onChange,
-    theme
+  theme,
 }) => {
   const className = "gap-0";
   return (
     <Field>
       <Listbox name={name} value={value} onChange={onChange}>
         <div className={InputWrapperVariants({ variant, className })}>
-
           <ListboxButton className="order-2 items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white">
             <span className={value ? "text-primary-950" : ""}>
               {value ||
@@ -48,9 +47,7 @@ export const ListboxSelect: FC<ListboxProps> = ({
             </span>
             <ChevronDownIcon size={"default"} aria-hidden="true" />
           </ListboxButton>
-            <Label theme={theme}>
-                {label}
-            </Label>
+          <Label theme={theme}>{label}</Label>
           <ListboxOptions
             anchor="bottom"
             transition
@@ -73,9 +70,7 @@ export const ListboxSelect: FC<ListboxProps> = ({
               </ListboxOption>
             ))}
           </ListboxOptions>
-          <InputSubtext theme={theme}>
-            {subtext}
-          </InputSubtext>
+          <InputSubtext theme={theme}>{subtext}</InputSubtext>
         </div>
       </Listbox>
     </Field>

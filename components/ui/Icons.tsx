@@ -50,7 +50,7 @@ const IconsVariants = cva("", {
   },
 });
 
-interface IconsProps extends VariantProps<typeof IconsVariants> {
+export interface IconsProps extends VariantProps<typeof IconsVariants> {
   size: SvgVariantsProps["size"];
   className?: string;
 }

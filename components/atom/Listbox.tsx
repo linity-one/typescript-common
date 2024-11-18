@@ -5,6 +5,7 @@ import {
   ListboxOption,
   ListboxOptions,
 } from "@headlessui/react";
+
 import { FC, useState } from "react";
 import { InputWrapperVariants } from "../ui/InputWrapper";
 import { VariantProps } from "cva";
@@ -20,8 +21,9 @@ interface ListboxProps extends VariantProps<typeof InputWrapperVariants> {
   label?: string;
   subtext?: string;
   value?: string;
+  disabled?: boolean;
   onChange?: (value: string) => void;
-  theme: "light" | "dark";
+  theme?: "light" | "dark";
 }
 
 export const ListboxSelect: FC<ListboxProps> = ({
@@ -32,20 +34,28 @@ export const ListboxSelect: FC<ListboxProps> = ({
   variant,
   listValues,
   value,
+  disabled,
   onChange,
-  theme,
+  theme = "dark",
 }) => {
   const className = "gap-0";
   return (
     <Field>
       <Listbox name={name} value={value} onChange={onChange}>
         <div className={InputWrapperVariants({ variant, className })}>
-          <ListboxButton className="order-2 items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white">
+          <ListboxButton
+            disabled={disabled || listValues.length == 0}
+            className="order-2 items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white"
+          >
             <span className={value ? "text-primary-950" : ""}>
               {value ||
                 (placeholderText ? placeholderText : "select something")}
             </span>
-            <ChevronDownIcon size={"default"} aria-hidden="true" />
+            <ChevronDownIcon
+              className={disabled || listValues.length == 0 ? "hidden" : ""}
+              size={"default"}
+              aria-hidden="true"
+            />
           </ListboxButton>
           <Label theme={theme}>{label}</Label>
           <ListboxOptions

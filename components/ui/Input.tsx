@@ -1,4 +1,5 @@
 import { FC, forwardRef, InputHTMLAttributes } from "react";
+import {Input as HeadlessInput} from "@headlessui/react";
 import { cva, VariantProps } from "cva";
 import { cn } from "../../lib/cn";
 
@@ -28,13 +29,13 @@ interface InputProps
 const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
   ({ variant, className, children, ...props }, ref) => {
     return (
-      <input
+      <HeadlessInput
         ref={ref}
         className={cn(InputVariants({ variant, className }))}
         {...props}
       >
         {children}
-      </input>
+      </HeadlessInput>
     );
   },
 );

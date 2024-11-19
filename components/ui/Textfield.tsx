@@ -30,7 +30,7 @@ interface InputProps
   extends TextareaHTMLAttributes<HTMLTextAreaElement>,
     VariantProps<typeof InputVariants> {}
 
-const Input: FC<InputProps> = forwardRef<HTMLTextAreaElement, InputProps>(
+const Input = forwardRef<HTMLTextAreaElement, InputProps>(
   ({ variant, className, children, ...props }, ref) => {
     return (
       <textarea

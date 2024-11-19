@@ -7,15 +7,22 @@ const InputSubtextVariants = cva(
   {
     variants: {
       variant: {
-        standard: "peer-invalid:hidden peer-disabled:hidden",
-        error: "hidden peer-invalid:block",
+        standard:
+          "peer-invalid:hidden peer-disabled:hidden text-primary-600 peer-focus:text-primary-950",
+        error: "hidden peer-invalid:block text-error",
       },
       theme: {
-        dark: "text-primary-600 peer-focus:text-primary-950",
-        light: "text-primary-200 peer-focus:text-primary-100",
+        dark: "",
+        light: "",
       },
     },
-    compoundVariants: [],
+    compoundVariants: [
+      {
+        variant: "error",
+        theme: "dark",
+        className: "text-error",
+      },
+    ],
     defaultVariants: {
       variant: "standard",
     },

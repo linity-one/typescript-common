@@ -45,7 +45,7 @@ export const ListboxSelect: FC<ListboxProps> = ({
         <div className={InputWrapperVariants({ variant, className })}>
           <ListboxButton
             disabled={disabled || listValues.length == 0}
-            className="order-2 items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white"
+            className="peer order-2 items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white"
           >
             <span className={value ? "text-primary-950" : ""}>
               {value ||
@@ -58,6 +58,7 @@ export const ListboxSelect: FC<ListboxProps> = ({
             />
           </ListboxButton>
           <Label theme={theme}>{label}</Label>
+            <InputSubtext theme={theme}>{subtext}</InputSubtext>
           <ListboxOptions
             anchor="bottom"
             transition
@@ -80,7 +81,6 @@ export const ListboxSelect: FC<ListboxProps> = ({
               </ListboxOption>
             ))}
           </ListboxOptions>
-          <InputSubtext theme={theme}>{subtext}</InputSubtext>
         </div>
       </Listbox>
     </Field>

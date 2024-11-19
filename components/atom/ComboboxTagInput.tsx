@@ -2,7 +2,6 @@ import { Combobox, Description, Field, Label } from "@headlessui/react";
 import { FC, useEffect, useRef, useState } from "react";
 import { InputWrapperVariants } from "../ui/InputWrapper";
 import { VariantProps } from "cva";
-import X from "../svg/x";
 import Tag from "../ui/Tag";
 import { cn } from "../../lib/cn";
 import { CheckIcon } from "../ui/Icons";
@@ -17,6 +16,7 @@ export interface AutocompleteFunctions<X> {
 interface ComboboxTagInputProps<X>
   extends VariantProps<typeof InputWrapperVariants> {
   autocompleteFunctions: AutocompleteFunctions<X>;
+  className?: string;
   placeholderText?: string;
   name?: string;
   label?: string;
@@ -29,6 +29,7 @@ const ComboboxTagInput = <X,>({
   label,
   subtext,
   name,
+  className,
   variant,
   placeholderText,
   autocompleteFunctions,
@@ -69,7 +70,7 @@ const ComboboxTagInput = <X,>({
   };
 
   return (
-    <Field id={name}>
+    <Field id={name} className={className}>
       <Combobox
         name={name}
         value={selectedItems}
@@ -124,7 +125,7 @@ const ComboboxTagInput = <X,>({
               {subtext}
             </Description>
           ) : (
-            <div className={"flex mt-0.5 order-3 flex-row gap-x-4"}>
+            <div className={"flex mt-0.5 order-3 flex-row flex-wrap gap-x-4 gap-y-2 "}>
               {selectedItems.map((item, idx) => {
                 return (
                   <Tag

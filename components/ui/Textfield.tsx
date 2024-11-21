@@ -4,10 +4,12 @@ import {
   InputHTMLAttributes,
   TextareaHTMLAttributes,
 } from "react";
+
+import { Textarea as HeadlessTextArea } from "@headlessui/react";
 import { cva, VariantProps } from "cva";
 import { cn } from "../../lib/cn";
 
-const InputVariants = cva(
+const TextAreaVariants = cva(
   "peer order-2  h-20 rounded-md border-primary-400 py-1 px-2 text-text text-primary-950 placeholder:text-primary-600 " +
     "focus:outline-none focus:border-primary-400 focus:ring-1 focus:ring-offset-0 focus:ring-primary-600 " +
     "invalid:outline-none invalid:ring-offset-0 invalid:ring-alert invalid:border-alert invalid:ring-0 " +
@@ -26,24 +28,24 @@ const InputVariants = cva(
   },
 );
 
-interface InputProps
+interface TeaxtareaProps
   extends TextareaHTMLAttributes<HTMLTextAreaElement>,
-    VariantProps<typeof InputVariants> {}
+    VariantProps<typeof TextAreaVariants> {}
 
-const Input = forwardRef<HTMLTextAreaElement, InputProps>(
+const Textarea = forwardRef<HTMLTextAreaElement, TeaxtareaProps>(
   ({ variant, className, children, ...props }, ref) => {
     return (
-      <textarea
+      <HeadlessTextArea
         ref={ref}
-        className={cn(InputVariants({ variant, className }))}
+        className={cn(TextAreaVariants({ variant, className }))}
         {...props}
       >
         {children}
-      </textarea>
+      </HeadlessTextArea>
     );
   },
 );
 
-Input.displayName = "Input";
+Textarea.displayName = "Input";
 
-export default Input;
+export default Textarea;

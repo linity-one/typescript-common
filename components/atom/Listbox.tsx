@@ -58,7 +58,7 @@ export const ListboxSelect: FC<ListboxProps> = ({
             />
           </ListboxButton>
           <Label theme={theme}>{label}</Label>
-            <InputSubtext theme={theme}>{subtext}</InputSubtext>
+          <InputSubtext theme={theme}>{subtext}</InputSubtext>
           <ListboxOptions
             anchor="bottom"
             transition

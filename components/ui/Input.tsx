@@ -1,5 +1,5 @@
 import { FC, forwardRef, InputHTMLAttributes } from "react";
-import {Input as HeadlessInput} from "@headlessui/react";
+import { Input as HeadlessInput } from "@headlessui/react";
 import { cva, VariantProps } from "cva";
 import { cn } from "../../lib/cn";
 

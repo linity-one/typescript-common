@@ -125,7 +125,11 @@ const ComboboxTagInput = <X,>({
               {subtext}
             </Description>
           ) : (
-            <div className={"flex mt-0.5 order-3 flex-row flex-wrap gap-x-4 gap-y-2 "}>
+            <div
+              className={
+                "flex mt-0.5 order-3 flex-row flex-wrap gap-x-4 gap-y-2 "
+              }
+            >
               {selectedItems.map((item, idx) => {
                 return (
                   <Tag

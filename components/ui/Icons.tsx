@@ -36,6 +36,9 @@ import Image from "../svg/image";
 import Video from "../svg/video";
 import Audio from "../svg/audio";
 import Check from "../svg/check";
+import Pause from "../svg/pause";
+import Play from "../svg/play";
+import Target from "../svg/target";
 
 const IconsVariants = cva("", {
   variants: {
@@ -54,6 +57,34 @@ export interface IconsProps extends VariantProps<typeof IconsVariants> {
   size: SvgVariantsProps["size"];
   className?: string;
 }
+
+export const PlayIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return (
+        <Play
+            size={size}
+            className={cn(IconsVariants({ variant, className }))}
+        />
+    );
+};
+
+export const PauseIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return (
+        <Pause
+            size={size}
+            className={cn(IconsVariants({ variant, className }))}
+        />
+    );
+};
+
+export const TargetIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return (
+        <Target
+            size={size}
+            className={cn(IconsVariants({ variant, className }))}
+        />
+    );
+};
+
 
 export const LinkedInIcon: FC<IconsProps> = ({ size, variant, className }) => {
   return (

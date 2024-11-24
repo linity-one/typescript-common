@@ -83,7 +83,7 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
               />
             ))}
           </div>
-          <div className="text-center top-0 right-0 left-0 m-auto  text-primary-600">
+          <div className="text-center top-0 right-0 left-0 m-auto text-primary-600">
             <p>
               {display_data.drop_your_files_text[locale]}
               <span className={"font-bold"}>

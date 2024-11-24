@@ -20,6 +20,7 @@
     "paths": {
       "@/*": ["./src/*"],
       //typescript common pathing
+      "@/public/*": ["./public/*"],
       "@/common/lib/*": ["./typescript-common/lib/*"],
       "@/common/ui/*": ["./typescript-common/components/ui/*"],
       "@/common/atom/*": ["./typescript-common/components/atom/*"],
@@ -31,6 +32,6 @@
       "@/lib/*": ["./src/lib/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "types/**/*"],
   "exclude": ["node_modules"]
 }

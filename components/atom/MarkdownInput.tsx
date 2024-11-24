@@ -90,7 +90,7 @@ const MarkdownTextareaGroup: FC<MarkdownTextareaGroupProps> = ({
         className="order-3 group-data-[preview]:hidden min-h-10 h-full"
       ></Textfield>
       <Markdown
-        className="w-full py-3 mb-1  shadow-500 min-h-10 hidden order-3 group-data-[preview]:block"
+        className="w-full py-3 mb-1 h-fit shadow-500 min-h-10 hidden order-3 group-data-[preview]:block"
         rawText={value}
       />
       <Label className={"order-1"}>{label}</Label>

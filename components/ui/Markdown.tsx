@@ -8,7 +8,7 @@ import remarkGfm from "remark-gfm";
 import rehypeStringify from "rehype-stringify";
 import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
 import rehypeMathJax from "rehype-mathjax";
-import addClasses from "rehype-class-names"
+import addClasses from "rehype-class-names";
 
 interface MarkdownProps extends HTMLAttributes<HTMLParagraphElement> {
   rawText: string;
@@ -35,12 +35,15 @@ const Markdown: FC<MarkdownProps> = forwardRef<
         },
       })
       .use(rehypeMathJax)
-        .use(addClasses, {
-            table: "table-auto border-collapse border border-accent w-full text-left ",
-            th: "border border-primary-300 px-1.5 py-1 bg-primary-100",
-            td: "border border-primary-300 px-1.5 py-1",
-            tr: "odd:bg-primary-50",
-        })
+      .use(addClasses, {
+        table:
+          "table-auto border-collapse border border-accent w-full text-left ",
+        th: "border border-primary-300 px-1.5 py-1 bg-primary-100",
+        td: "border border-primary-300 px-1.5 py-1",
+        tr: "odd:bg-primary-50",
+        blockquote:
+          "bg-primary-50 text-center py-1 px-2 border-x-2 border-primary-400",
+      })
       .use(rehypeStringify)
       .process(rawText)
       .then((processedContent) => {

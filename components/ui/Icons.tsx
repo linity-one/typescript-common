@@ -59,32 +59,22 @@ export interface IconsProps extends VariantProps<typeof IconsVariants> {
 }
 
 export const PlayIcon: FC<IconsProps> = ({ size, variant, className }) => {
-    return (
-        <Play
-            size={size}
-            className={cn(IconsVariants({ variant, className }))}
-        />
-    );
+  return (
+    <Play size={size} className={cn(IconsVariants({ variant, className }))} />
+  );
 };
 
 export const PauseIcon: FC<IconsProps> = ({ size, variant, className }) => {
-    return (
-        <Pause
-            size={size}
-            className={cn(IconsVariants({ variant, className }))}
-        />
-    );
+  return (
+    <Pause size={size} className={cn(IconsVariants({ variant, className }))} />
+  );
 };
 
 export const TargetIcon: FC<IconsProps> = ({ size, variant, className }) => {
-    return (
-        <Target
-            size={size}
-            className={cn(IconsVariants({ variant, className }))}
-        />
-    );
+  return (
+    <Target size={size} className={cn(IconsVariants({ variant, className }))} />
+  );
 };
-
 
 export const LinkedInIcon: FC<IconsProps> = ({ size, variant, className }) => {
   return (

@@ -39,7 +39,7 @@ const config: Config = {
       full: "9999px",
     },
     boxShadow: {
-        none: "0 0 #0000",
+      none: "0 0 #0000",
       100: "0px 2px 4px -2px rgba(40, 51, 58, 0.12), 0px 4px 4px -2px rgba(40, 51, 58, 0.08)",
       200: "0px 4px 6px -4px rgba(40, 51, 58, 0.12), 0px 8px 8px -4px rgba(40, 51, 58, 0.08)",
       300: "0px 6px 8px -6px rgba(40, 51, 58, 0.12), 0px 8px 16px -6px rgba(40, 51, 58, 0.08)",

@@ -1,5 +1,5 @@
+"use client";
 import { toast, toast as sonnerToast } from "sonner";
-import { ReactNode } from "react";
 import {
   AlertIcon,
   ErrorIcon,
@@ -8,6 +8,7 @@ import {
   XIcon,
 } from "@/common/ui/Icons";
 import LoadingAnimation from "@/common/ui/LoadingAnimation";
+import { useEffect, useState } from "react";
 
 export const infoToast = (message: string) => {
   sonnerToast.custom((t) => (
@@ -61,28 +62,66 @@ export const errorToast = (message: string) => {
   ));
 };
 
-const loadingToast = (message: string) => {
+// Modified loadingToast function with countdown
+const loadingToast = (message: string, seconds?: number) => {
   const id = sonnerToast.custom((t) => (
+    <LoadingToastContent message={message} seconds={seconds} toastId={t} />
+  ));
+  return id;
+};
+
+// LoadingToastContent component to handle countdown
+interface LoadingToastContentProps {
+  message: string;
+  seconds?: number;
+  toastId: any; // Adjust type according to your toast library
+}
+
+const LoadingToastContent: React.FC<LoadingToastContentProps> = ({
+  message,
+  seconds,
+  toastId,
+}) => {
+  const [remainingSeconds, setRemainingSeconds] = useState<number | undefined>(
+    seconds,
+  );
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (remainingSeconds !== undefined && remainingSeconds > 0) {
+      interval = setInterval(() => {
+        setRemainingSeconds((prev) => (prev ? prev - 1 : 0));
+      }, 1000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [remainingSeconds]);
+
+  return (
     <div className="flex flex-row bg-white p-2 gap-2 items-center rounded-md border border-primary-950">
       <LoadingAnimation size="default" />
       <span className="text-primary-950 text-text flex-grow whitespace-nowrap overflow-hidden">
         {message}
+        {remainingSeconds !== undefined &&
+          remainingSeconds >= 0 &&
+          ` (${remainingSeconds}s)`}
       </span>
-      <div className="text-primary-950" onClick={() => toast.dismiss(t)}>
+      <div className="text-primary-950" onClick={() => toast.dismiss(toastId)}>
         <XIcon size="default" />
       </div>
     </div>
-  ));
-  return id;
+  );
 };
 
 // Promise Toast
 export const promiseToast = <T,>(
   promise: Promise<T>,
   messages: { pending: string; success: string; error: string },
+  seconds?: number,
 ): Promise<T> => {
-  // Display the loading toast
-  const toastId = loadingToast(messages.pending);
+  // Display the loading toast with optional countdown
+  const toastId = loadingToast(messages.pending, seconds);
 
   // Handle promise resolution and rejection
   return promise

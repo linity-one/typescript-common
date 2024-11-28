@@ -2,6 +2,7 @@ import { ButtonHTMLAttributes, FC, forwardRef } from "react";
 import { cva, VariantProps } from "cva";
 import { cn } from "@/common/lib/cn";
 import LoadingAnimation from "./LoadingAnimation";
+import { Button as HeadlessButton } from "@headlessui/react";
 
 export const ButtonVariants = cva(
   "font-button font-semi-bold flex flex-row items-center justify-center transition-colors duration-300",
@@ -76,7 +77,7 @@ interface ButtonProps
 const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ loading, children, className, variant, theme, size, ...props }, ref) => {
     return (
-      <button
+      <HeadlessButton
         ref={ref}
         className={cn(ButtonVariants({ variant, size, theme }), className)}
         {...props}
@@ -86,7 +87,7 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
           size={size == "sm" ? "small" : size == "md" ? "default" : "large"}
         />
         {children}
-      </button>
+      </HeadlessButton>
     );
   },
 );

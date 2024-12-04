@@ -1,91 +1,84 @@
-import {
-  Field,
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-} from "@headlessui/react";
+import { Field, Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
 
-import { FC, useState } from "react";
-import { InputWrapperVariants } from "../ui/InputWrapper";
-import { VariantProps } from "cva";
-import { CheckIcon, ChevronDownIcon } from "../ui/Icons";
-import { cn } from "../../lib/cn";
-import Label from "../ui/Label";
-import InputSubtext from "../ui/InputSubtext";
+import { FC, useState } from 'react'
+import { InputWrapperVariants } from '../ui/InputWrapper'
+import { VariantProps } from 'cva'
+import { CheckIcon, ChevronDownIcon } from '../ui/Icons'
+import { cn } from '../../lib/cn'
+import Label from '../ui/Label'
+import InputSubtext from '../ui/InputSubtext'
 
 interface ListboxProps extends VariantProps<typeof InputWrapperVariants> {
-  listValues: string[];
-  placeholderText?: string;
-  name?: string;
-  label?: string;
-  subtext?: string;
-  value?: string;
-  disabled?: boolean;
-  onChange?: (value: string) => void;
-  theme?: "light" | "dark";
+    listValues: string[]
+    placeholderText?: string
+    name?: string
+    label?: string
+    subtext?: string
+    value?: string
+    disabled?: boolean
+    onChange?: (value: string) => void
+    theme?: 'light' | 'dark'
 }
 
 export const ListboxSelect: FC<ListboxProps> = ({
-  name,
-  label,
-  subtext,
-  placeholderText,
-  variant,
-  listValues,
-  value,
-  disabled,
-  onChange,
-  theme = "dark",
+    name,
+    label,
+    subtext,
+    placeholderText,
+    variant,
+    listValues,
+    value,
+    disabled,
+    onChange,
+    theme = 'dark',
 }) => {
-  const className = "gap-0";
-  return (
-    <Field>
-      <Listbox name={name} value={value} onChange={onChange}>
-        <div className={InputWrapperVariants({ variant, className })}>
-          <ListboxButton
-            disabled={disabled || listValues.length == 0}
-            className="peer order-2 items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white"
-          >
-            <span className={value ? "text-primary-950" : ""}>
-              {value ||
-                (placeholderText ? placeholderText : "select something")}
-            </span>
-            <ChevronDownIcon
-              className={disabled || listValues.length == 0 ? "hidden" : ""}
-              size={"default"}
-              aria-hidden="true"
-            />
-          </ListboxButton>
-          <Label theme={theme}>{label}</Label>
-          <InputSubtext theme={theme}>{subtext}</InputSubtext>
-          <ListboxOptions
-            anchor="bottom"
-            transition
-            className={cn(
-              "w-[var(--button-width)] bg-white [--anchor-gap:var(--spacing-1)] focus:outline-none",
-              "transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0",
-            )}
-          >
-            {listValues.map((listValue) => (
-              <ListboxOption
-                key={listValue}
-                value={listValue}
-                className="group flex cursor-default border-b border-l border-r  border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950 select-none data-[focus]:bg-primary-100"
-              >
-                <span className="w-full">{listValue}</span>
-                <CheckIcon
-                  size="default"
-                  className="invisible group-data-[selected]:visible"
-                />
-              </ListboxOption>
-            ))}
-          </ListboxOptions>
-        </div>
-      </Listbox>
-    </Field>
-  );
-};
+    const className = 'gap-0'
+    return (
+        <Field>
+            <Listbox name={name} value={value} onChange={onChange}>
+                <div className={InputWrapperVariants({ variant, className })}>
+                    <ListboxButton
+                        disabled={disabled || listValues.length == 0}
+                        className="peer order-2 items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white"
+                    >
+                        <span className={value ? 'text-primary-950' : ''}>
+                            {value || (placeholderText ? placeholderText : 'select something')}
+                        </span>
+                        <ChevronDownIcon
+                            className={disabled || listValues.length == 0 ? 'hidden' : ''}
+                            size={'default'}
+                            aria-hidden="true"
+                        />
+                    </ListboxButton>
+                    <Label theme={theme}>{label}</Label>
+                    <InputSubtext theme={theme}>{subtext}</InputSubtext>
+                    <ListboxOptions
+                        anchor="bottom"
+                        transition
+                        className={cn(
+                            'w-[var(--button-width)] bg-white [--anchor-gap:var(--spacing-1)] focus:outline-none',
+                            'transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0',
+                        )}
+                    >
+                        {listValues.map((listValue) => (
+                            <ListboxOption
+                                key={listValue}
+                                value={listValue}
+                                className="group flex cursor-default border-b border-l border-r  border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950 select-none data-[focus]:bg-primary-100"
+                            >
+                                <span className="w-full">{listValue}</span>
+                                <CheckIcon
+                                    size="default"
+                                    className="invisible group-data-[selected]:visible"
+                                />
+                            </ListboxOption>
+                        ))}
+                    </ListboxOptions>
+                </div>
+            </Listbox>
+        </Field>
+    )
+}
 
 /*
 const ListboxSelect: FC<ListboxProps> = ({
@@ -138,4 +131,4 @@ const ListboxSelect: FC<ListboxProps> = ({
   );
 };
 */
-export default ListboxSelect;
+export default ListboxSelect

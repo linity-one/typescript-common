@@ -1,49 +1,44 @@
-import { FC, forwardRef, HTMLAttributes } from "react";
-import { cva, VariantProps } from "cva";
-import { cn } from "../../lib/cn";
+import { FC, forwardRef, HTMLAttributes } from 'react'
+import { cva, VariantProps } from 'cva'
+import { cn } from '../../lib/cn'
 
-const CardVariants = cva("group/card p-6 bg-white shadow-400  flex gap-1", {
-  variants: {
-    variant: {
-      standard: "rounded-xl",
-      sharp: "rounded-none",
+const CardVariants = cva('group/card p-6 bg-white shadow-400  flex gap-1', {
+    variants: {
+        variant: {
+            standard: 'rounded-xl',
+            sharp: 'rounded-none',
+        },
+        hover: {
+            static: '',
+            shadow_increase: 'transition-shadow duration-300 hover:shadow-600',
+            liftoff:
+                'transition-all duration-300 hover:shadow-800 hover:-translate-y-0.25 hover:scale-[1.005]',
+        },
+        flow: {
+            vertical: 'flex-col',
+            horizontal: 'flex-row',
+        },
     },
-    hover: {
-      static: "",
-      shadow_increase: "transition-shadow duration-300 hover:shadow-600",
-      liftoff:
-        "transition-all duration-300 hover:shadow-800 hover:-translate-y-0.25 hover:scale-[1.005]",
+    compoundVariants: [],
+    defaultVariants: {
+        variant: 'standard',
+        hover: 'static',
+        flow: 'vertical',
     },
-    flow: {
-      vertical: "flex-col",
-      horizontal: "flex-row",
-    },
-  },
-  compoundVariants: [],
-  defaultVariants: {
-    variant: "standard",
-    hover: "static",
-    flow: "vertical",
-  },
-});
+})
 
-interface CardProps
-  extends HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof CardVariants> {}
+interface CardProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof CardVariants> {}
 
 const Card: FC<CardProps> = forwardRef<HTMLDivElement, CardProps>(
-  ({ variant, hover, flow, className, children, ...props }, ref) => {
-    return (
-      <div
-        ref={ref}
-        className={cn(CardVariants({ variant, hover, flow }), className)}
-      >
-        {children}
-      </div>
-    );
-  },
-);
+    ({ variant, hover, flow, className, children, ...props }, ref) => {
+        return (
+            <div ref={ref} className={cn(CardVariants({ variant, hover, flow }), className)}>
+                {children}
+            </div>
+        )
+    },
+)
 
-Card.displayName = "Card";
+Card.displayName = 'Card'
 
-export default Card;
+export default Card

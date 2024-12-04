@@ -1,43 +1,38 @@
 {
-  "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": ["./src/*"],
-      //typescript common pathing
-      "@/public/*": ["./public/*"],
-      "@/common/lib/*": ["./typescript-common/lib/*"],
-      "@/common/ui/*": ["./typescript-common/components/ui/*"],
-      "@/common/atom/*": ["./typescript-common/components/atom/*"],
-      "@/common/molecule/*": ["./typescript-common/components/molecule/*"],
-      "@/common/toast/*": ["./typescript-common/components/toast/*"],
-      //normal path
-      "@/components/*": ["./src/components/*"],
-      "@/providers/*": ["./src/components/providers/*"],
-      "@/lib/*": ["./src/lib/*"]
-    }
-  },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "types/**/*"
-  ],
-  "exclude": ["node_modules"]
+    "compilerOptions": {
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "paths": {
+            "@/*": ["./src/*"],
+            //typescript common pathing
+            "@/public/*": ["./public/*"],
+            "@/common/lib/*": ["./typescript-common/lib/*"],
+            "@/common/ui/*": ["./typescript-common/components/ui/*"],
+            "@/common/atom/*": ["./typescript-common/components/atom/*"],
+            "@/common/molecule/*": ["./typescript-common/components/molecule/*"],
+            "@/common/toast/*": ["./typescript-common/components/toast/*"],
+            //normal path
+            "@/components/*": ["./src/components/*"],
+            "@/providers/*": ["./src/components/providers/*"],
+            "@/lib/*": ["./src/lib/*"]
+        },
+        "target": "ES2017"
+    },
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "types/**/*"],
+    "exclude": ["node_modules"]
 }

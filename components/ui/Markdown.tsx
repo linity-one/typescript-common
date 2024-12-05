@@ -39,6 +39,7 @@ const Markdown: FC<MarkdownProps> = forwardRef<HTMLDivElement, MarkdownProps>(
                     td: 'border border-primary-300 px-1.5 py-1',
                     tr: 'odd:bg-primary-50',
                     blockquote: 'bg-primary-50 text-center py-1 px-2 border-x-2 border-primary-400',
+                    li: 'text-text',
                 })
                 .use(rehypeStringify)
                 .process(rawText)

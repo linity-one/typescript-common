@@ -40,12 +40,16 @@ const ComboboxTagInput = <X,>({
     const [selectedItems, setSelectedItems] = useState<X[]>(value)
 
     useEffect(() => {
+        setSelectedItems(value)
+    }, [value])
+
+    useEffect(() => {
         query === ''
             ? setDropdownItems([])
             : autocompleteFunctions.autocompleteFunction(query).then((val) => {
                   setDropdownItems(val)
               })
-    }, [query])
+    }, [query, autocompleteFunctions])
 
     const removeIndexFromSelectedItems = (item: X) => {
         infoToast('removed item:' + autocompleteFunctions.renderFunction(item))

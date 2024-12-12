@@ -2,7 +2,7 @@ import { FC, forwardRef, HTMLAttributes } from 'react'
 import { cva, VariantProps } from 'cva'
 import { cn } from '../../lib/cn'
 
-const CardVariants = cva('group/card p-6 bg-white shadow-400  flex gap-1', {
+const CardVariants = cva('group/card p-xl bg-white shadow-400  flex gap-1', {
     variants: {
         variant: {
             standard: 'rounded-xl',

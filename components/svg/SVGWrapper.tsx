@@ -1,8 +1,9 @@
 import React from 'react'
 import { cva, VariantProps } from 'cva'
+import { cn } from '../../lib/cn'
 
 export const svgVariants = cva(
-    'transition-all ease duration-300', // Base classes for transition
+    'transition-all duration-300', // Base classes for transition
     {
         variants: {
             size: {
@@ -34,7 +35,7 @@ const SVGWrapper: React.FC<ExpandedSvgProps> = ({
 }) => {
     return (
         <svg
-            className={svgVariants({ size, animations, className })}
+            className={cn(svgVariants({ size, animations }), className)}
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

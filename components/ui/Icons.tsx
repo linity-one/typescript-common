@@ -39,6 +39,8 @@ import Check from '../svg/check'
 import Pause from '../svg/pause'
 import Play from '../svg/play'
 import Target from '../svg/target'
+import Share from '../svg/share'
+import Admin from '../svg/admin'
 
 const IconsVariants = cva('', {
     variants: {
@@ -201,4 +203,12 @@ export const AudioIcon: FC<IconsProps> = ({ size, variant, className }) => {
 
 export const CheckIcon: FC<IconsProps> = ({ size, variant, className }) => {
     return <Check size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const ShareIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Share size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const AdminIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Admin size={size} className={cn(IconsVariants({ variant, className }))} />
 }

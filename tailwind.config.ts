@@ -132,12 +132,61 @@ const config: Config = {
                         transform: 'translateY(calc(-100% - 32px))',
                     },
                 },
+                'rotate-y': {
+                    '0%': {
+                        transform: 'rotateY(360deg)',
+                    },
+                    '100%': {
+                        transform: 'rotateY(0)',
+                    },
+                },
+                bounce: {
+                    '0%, 100%': {
+                        transform: 'translateY(0)',
+                    },
+                    '50%': {
+                        transform: 'translateY(25%)',
+                    },
+                },
+                wiggle: {
+                    '0%, 100%': {
+                        transform: 'rotate(-3deg)',
+                    },
+                    '50%': {
+                        transform: 'rotate(3deg)',
+                    },
+                },
+                heartbeat: {
+                    '0%': {
+                        transform: 'scale(1)',
+                    },
+                    '10%': {
+                        transform: 'scale(1.3)',
+                    },
+                    '20%': {
+                        transform: 'scale(1)',
+                    },
+                    '30%': {
+                        transform: 'scale(1.3)',
+                    },
+                    '40%': {
+                        transform: 'scale(1)',
+                    },
+                    '100%': {
+                        transform: 'scale(1)',
+                    },
+                },
             },
             animation: {
                 'marquise-td': 'marquise-td 20s linear infinite',
                 'marquise-dt': 'marquise-dt 20s linear infinite',
+                'rotate-y':
+                    'rotate-y var(--tw-animate-duration, 1s) var(--tw-animate-easing, ease) var(--tw-animate-delay, 0s) var(--tw-animate-iteration, 1) var(--tw-animate-fill, both)',
+                bounce: 'bounce var(--tw-animate-duration, 1s) var(--tw-animate-easing, ease) var(--tw-animate-delay, 0s) var(--tw-animate-iteration, infinite) var(--tw-animate-fill, none)',
+                wiggle: 'wiggle var(--tw-animate-duration, 1s) var(--tw-animate-easing, ease) var(--tw-animate-delay, 0s) var(--tw-animate-iteration, 1) var(--tw-animate-fill, both)',
+                heartbeat:
+                    'heartbeat var(--tw-animate-duration, 1.5s) var(--tw-animate-easing, ease) var(--tw-animate-delay, 0s) var(--tw-animate-iteration, infinite) var(--tw-animate-fill, both)',
             },
-
             spacing: {
                 '3xs': '2px',
                 xxs: '4px',
@@ -218,6 +267,7 @@ const config: Config = {
     },
     plugins: [
         require('@tailwindcss/forms'),
+        require('tailwindcss-animated'),
         function ({ addBase, theme }: PluginAPI) {
             addBase({
                 h1: {

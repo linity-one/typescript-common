@@ -5,6 +5,7 @@ const config: Config = {
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
         './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/AIBar/**/*.{js,ts,jsx,tsx,mdx}',
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
         './typescript-common/components/**/*.{js,ts,jsx,tsx,mdx}',
     ],
@@ -66,6 +67,8 @@ const config: Config = {
                 '0px 8px 28px -6px rgba(228, 241, 253, 0.12), 0px 18px 88px -4px rgba(228, 241, 253, 0.14)',
         },
         colors: {
+            transparent: 'transparent',
+            current: 'currentColor',
             black: '#000000',
             white: '#FFFFFF',
             primary: {
@@ -118,6 +121,8 @@ const config: Config = {
                     '    rgba(228, 241, 253, 0) 30%,' +
                     '    rgba(241, 248, 254, 0.4) 65%,' +
                     '    rgba(228, 241, 253, 0) 100%)',
+                'radial-cloud-overlay':
+                    'radial-gradient(circle at left,rgba(40, 51, 58, 0.2) 0%, rgba(228, 241, 253, 0.2) 100% )',
             },
             keyframes: {
                 'marquise-dt': {

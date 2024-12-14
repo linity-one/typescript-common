@@ -41,6 +41,9 @@ import Play from '../svg/play'
 import Target from '../svg/target'
 import Share from '../svg/share'
 import Admin from '../svg/admin'
+import Picture from '../svg/picture'
+import Attachement from '../svg/attachement'
+import Internet from '../svg/internet'
 
 const IconsVariants = cva('', {
     variants: {
@@ -211,4 +214,16 @@ export const ShareIcon: FC<IconsProps> = ({ size, variant, className }) => {
 
 export const AdminIcon: FC<IconsProps> = ({ size, variant, className }) => {
     return <Admin size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const PictureIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Picture size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const AttachementIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Attachement size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const InternetIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Internet size={size} className={cn(IconsVariants({ variant, className }))} />
 }

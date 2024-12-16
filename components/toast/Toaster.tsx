@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { Toaster as SonnerToaster } from 'sonner'
-import LoadingAnimation from '../ui/LoadingAnimation'
 
 interface ToasterProps {}
 

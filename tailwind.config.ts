@@ -273,6 +273,7 @@ const config: Config = {
     plugins: [
         require('@tailwindcss/forms'),
         require('tailwindcss-animated'),
+        require('tailwind-scrollbar'),
         function ({ addBase, theme }: PluginAPI) {
             addBase({
                 h1: {

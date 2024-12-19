@@ -123,6 +123,7 @@ const config: Config = {
                     '    rgba(228, 241, 253, 0) 100%)',
                 'radial-cloud-overlay':
                     'radial-gradient(circle at left,rgba(40, 51, 58, 0.2) 0%, rgba(228, 241, 253, 0.2) 100% )',
+                'loading-gradient': 'linear-gradient(45deg, #28333A 35%, #DDDE59 50%,#28333A 65%)',
             },
             keyframes: {
                 'marquise-dt': {
@@ -136,6 +137,10 @@ const config: Config = {
                     '0%': {
                         transform: 'translateY(calc(-100% - 32px))',
                     },
+                },
+                loadingAnimation: {
+                    '0%': { backgroundPosition: '100% 0%' },
+                    '100%': { backgroundPosition: '0% 0' },
                 },
                 'rotate-y': {
                     '0%': {
@@ -191,6 +196,8 @@ const config: Config = {
                 wiggle: 'wiggle var(--tw-animate-duration, 1s) var(--tw-animate-easing, ease) var(--tw-animate-delay, 0s) var(--tw-animate-iteration, 1) var(--tw-animate-fill, both)',
                 heartbeat:
                     'heartbeat var(--tw-animate-duration, 1.5s) var(--tw-animate-easing, ease) var(--tw-animate-delay, 0s) var(--tw-animate-iteration, infinite) var(--tw-animate-fill, both)',
+                'loading-bg':
+                    'loadingAnimation  var(--tw-animate-duration, 5s) var(--tw-animate-easing, ease) var(--tw-animate-delay, 0s) var(--tw-animate-iteration, infinite)',
             },
             spacing: {
                 '3xs': '2px',

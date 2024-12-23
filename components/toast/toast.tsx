@@ -4,6 +4,21 @@ import { AlertIcon, ErrorIcon, InformationIcon, SuccessIcon, XIcon } from '@/com
 import LoadingAnimation from '@/common/ui/LoadingAnimation'
 import { useEffect, useState } from 'react'
 
+export const aiToast = (message: string, action: boolean) => {
+    sonnerToast.custom((t) => (
+        <div className="flex flex-row text-primary-950 p-2 gap-2 items-center rounded-md border border-primary-950">
+            <InformationIcon size="default" className="text-primary-950" />
+            <span className="text-primary-100 text-text flex-grow overflow-hidden">{message}</span>
+            <div
+                className={action ? 'text-accent' : 'text-primary-950'}
+                onClick={() => toast.dismiss(t)}
+            >
+                <XIcon size="default" />
+            </div>
+        </div>
+    ))
+}
+
 export const infoToast = (message: string) => {
     sonnerToast.custom((t) => (
         <div className="flex flex-row bg-white p-2 gap-2 items-center rounded-md border border-primary-950">

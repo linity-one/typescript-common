@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 
 export const aiToast = (message: string, action: boolean) => {
     sonnerToast.custom((t) => (
-        <div className="flex flex-row text-primary-950 p-2 gap-2 items-center rounded-md border border-primary-950">
+        <div className="flex flex-row bg-primary-950 p-2 gap-2 items-center rounded-md border border-primary-950">
             <InformationIcon size="default" className="text-primary-950" />
             <span className="text-primary-100 text-text flex-grow overflow-hidden">{message}</span>
             <div

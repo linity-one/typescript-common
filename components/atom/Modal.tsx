@@ -6,23 +6,23 @@ import { VariantProps } from 'cva'
 import { cn } from '../../lib/cn'
 
 interface ModalProps {
-    variant: VariantProps<typeof CardVariants>['variant']
+    variant?: VariantProps<typeof CardVariants>['variant']
     isOpen: boolean
     close: () => void
     className?: string
     children: ReactNode
     title?: string
-    backdrop: boolean
+    backdrop?: boolean
 }
 
 const Modal: FC<ModalProps> = ({
-    variant,
     title,
     isOpen,
     close,
     className,
     children,
-    backdrop,
+    variant = 'standard',
+    backdrop = true,
 }) => {
     return (
         <Dialog open={isOpen} onClose={() => close()}>

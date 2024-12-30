@@ -61,6 +61,7 @@ const IconsVariants = cva('', {
 export interface IconsProps extends VariantProps<typeof IconsVariants> {
     size: SvgVariantsProps['size']
     className?: string
+    fill?: string
 }
 
 export const PlayIcon: FC<IconsProps> = ({ size, variant, className }) => {
@@ -143,8 +144,8 @@ export const LocationIcon: FC<IconsProps> = ({ size, variant, className }) => {
     return <Location size={size} className={cn(IconsVariants({ variant, className }))} />
 }
 
-export const HeartIcon: FC<IconsProps> = ({ size, variant, className }) => {
-    return <Heart size={size} className={cn(IconsVariants({ variant, className }))} />
+export const HeartIcon: FC<IconsProps> = ({ size, variant, className, fill }) => {
+    return <Heart size={size} fill={fill} className={cn(IconsVariants({ variant, className }))} />
 }
 
 export const LearnIcon: FC<IconsProps> = ({ size, variant, className }) => {

@@ -53,12 +53,8 @@ const Markdown: FC<MarkdownProps> = forwardRef<HTMLDivElement, MarkdownProps>(
                 .use(remarkParse)
                 .use(remarkMath, { singleDollarTextMath: false })
                 .parse(rawText)
-            console.log(ast)
 
-            unified()
-                .use(remarkRehype)
-                .run(ast)
-                .then((root) => console.log(root))
+            unified().use(remarkRehype).run(ast)
         }, [rawText])
 
         // Potential security risk with `dangerouslySetInnerHTML`

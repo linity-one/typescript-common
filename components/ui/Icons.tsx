@@ -44,6 +44,7 @@ import Admin from '../svg/admin'
 import Picture from '../svg/picture'
 import Attachement from '../svg/attachement'
 import Internet from '../svg/internet'
+import Switch from '../svg/switch'
 
 const IconsVariants = cva('', {
     variants: {
@@ -118,6 +119,10 @@ export const ChevronRightIcon: FC<IconsProps> = ({ size, variant, className }) =
 
 export const ChevronLeftIcon: FC<IconsProps> = ({ size, variant, className }) => {
     return <Chevronleft size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const SwitchIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Switch size={size} className={cn(IconsVariants({ variant, className }))} />
 }
 
 export const SocialIcon: FC<IconsProps> = ({ size, variant, className }) => {

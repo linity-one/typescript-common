@@ -45,6 +45,7 @@ import Picture from '../svg/picture'
 import Attachement from '../svg/attachement'
 import Internet from '../svg/internet'
 import Switch from '../svg/switch'
+import Write from '../svg/write'
 
 const IconsVariants = cva('', {
     variants: {
@@ -196,6 +197,10 @@ export const XIcon: FC<IconsProps> = ({ size, variant, className }) => {
 
 export const AICreateIcon: FC<IconsProps> = ({ size, variant, className }) => {
     return <Aicreate size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const WriteIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Write size={size} className={cn(IconsVariants({ variant, className }))} />
 }
 
 export const ImageIcon: FC<IconsProps> = ({ size, variant, className }) => {

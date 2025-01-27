@@ -6,6 +6,7 @@ const config: Config = {
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
         './src/components/**/*.{js,ts,jsx,tsx,mdx}',
         './src/AIBar/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/sidenav/**/*.{js,ts,jsx,tsx,mdx}',
         './src/Editor/**/*.{js,ts,jsx,tsx,mdx}',
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
         './typescript-common/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -123,7 +124,7 @@ const config: Config = {
                     '    rgba(241, 248, 254, 0.4) 65%,' +
                     '    rgba(228, 241, 253, 0) 100%)',
                 'radial-cloud-overlay':
-                    'radial-gradient(circle at left,rgba(40, 51, 58, 0.2) 0%, rgba(228, 241, 253, 0.2) 100% )',
+                    'radial-gradient(circle, rgba(40,51,58,0) 0%, rgba(228,241,253,0) 50%, rgba(228,241,253,1) 100%)',
                 'loading-gradient': 'linear-gradient(45deg, #28333A 35%, #DDDE59 50%,#28333A 65%)',
             },
             keyframes: {

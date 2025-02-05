@@ -3,19 +3,27 @@ import { toast, toast as sonnerToast } from 'sonner'
 import { AlertIcon, ErrorIcon, InformationIcon, SuccessIcon, XIcon } from '@/common/ui/Icons'
 import LoadingAnimation from '@/common/ui/LoadingAnimation'
 import { useEffect, useState } from 'react'
+import { Button } from '@headlessui/react'
 
-export const aiToast = (message: string, action: boolean) => {
+export const aiToast = (message: string, callback_action?: () => void) => {
+    const Container = callback_action ? Button : 'div'
     sonnerToast.custom((t) => (
-        <div className="flex flex-row bg-primary-950 p-2 gap-2 items-center rounded-md border border-primary-950">
+        <Container
+            onClick={callback_action}
+            className="flex flex-row bg-primary-950 p-2 gap-2 items-center rounded-md border border-primary-950"
+        >
             <InformationIcon size="default" className="text-primary-950" />
             <span className="text-primary-100 text-text flex-grow overflow-hidden">{message}</span>
-            <div
-                className={action ? 'text-accent' : 'text-primary-950'}
-                onClick={() => toast.dismiss(t)}
+            <Button
+                className={callback_action ? 'text-accent' : 'text-primary-950'}
+                onClick={(e) => {
+                    e.stopPropagation() // So it doesn’t also call onClick
+                    sonnerToast.dismiss(t)
+                }}
             >
                 <XIcon size="default" />
-            </div>
-        </div>
+            </Button>
+        </Container>
     ))
 }
 

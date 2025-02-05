@@ -6,16 +6,14 @@ import { useEffect, useState } from 'react'
 import { Button } from '@headlessui/react'
 
 export const aiToast = (message: string, callback_action?: () => void) => {
-    const Container = callback_action ? Button : 'div'
     sonnerToast.custom((t) => (
-        <Container
+        <div
             onClick={callback_action}
-            className="flex flex-row bg-primary-950 p-2 gap-2 items-center rounded-md border border-primary-950"
+            className={`flex flex-row bg-primary-950 py-2 px-3  gap-2 items-center rounded-md border border-primary-950 ${callback_action ? 'text-accent cursor-pointer' : 'text-primary-100'}`}
         >
-            <InformationIcon size="default" className="text-primary-950" />
-            <span className="text-primary-100 text-text flex-grow overflow-hidden">{message}</span>
+            <span className=" text-text flex-grow overflow-hidden">{message}</span>
             <Button
-                className={callback_action ? 'text-accent' : 'text-primary-950'}
+                className={'text-primary-100 cursor-pointer'}
                 onClick={(e) => {
                     e.stopPropagation() // So it doesn’t also call onClick
                     sonnerToast.dismiss(t)
@@ -23,7 +21,7 @@ export const aiToast = (message: string, callback_action?: () => void) => {
             >
                 <XIcon size="default" />
             </Button>
-        </Container>
+        </div>
     ))
 }
 

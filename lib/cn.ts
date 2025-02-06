@@ -1,6 +1,6 @@
 import type { ClassValue } from 'clsx'
 //needs configuration on the custom file
-import { extendTailwindMerge, twMerge } from 'tailwind-merge'
+import { extendTailwindMerge } from 'tailwind-merge'
 import { clsx } from 'clsx'
 
 const customTwMerge = extendTailwindMerge({

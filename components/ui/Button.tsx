@@ -5,18 +5,20 @@ import LoadingAnimation from './LoadingAnimation'
 import { Button as HeadlessButton } from '@headlessui/react'
 
 export const ButtonVariants = cva(
-    'font-button font-semi-bold flex flex-row items-center justify-center transition-colors duration-300',
+    'font-button font-semi-bold flex flex-row items-center justify-center transition-color duration-300',
     {
         variants: {
             variant: {
                 primary: '',
                 secondary: '',
-                tertiary: '',
+                tertiary: 'after:absolute relative after:transition-all after:duration-300',
+                placeholder: '',
+                tag_ish: '',
             },
             size: {
                 sm: 'px-md py-xxs text-subtext  rounded-sm gap-1',
-                md: 'px-2 py-xs text-text rounded-md gap-1.5',
-                lg: 'px-5 py-1.5 text-h3 rounded-md gap-2',
+                md: 'px-ld py-xs text-text rounded-md gap-1',
+                lg: 'px-xl py-sm text-h3 rounded-md gap-1.5',
             },
             theme: {
                 dark: '',
@@ -27,36 +29,50 @@ export const ButtonVariants = cva(
             {
                 variant: 'primary',
                 theme: 'dark',
-                className: 'bg-primary-950 hover:bg-primary-800 text-accent-primary',
+                className: 'bg-primary-950 text-primary-100 hover:text-accent shadow-400',
             },
             {
                 variant: 'primary',
                 theme: 'light',
-                className: 'bg-accent-primary hover:bg-accent-primary-hover text-gunmetal',
+                className: 'bg-primary-100 hover:bg-accent-primary text-gunmetal shadow-light-400',
             },
             {
                 variant: 'secondary',
                 theme: 'dark',
-                className:
-                    'border border-primary-950 text-primary-950 hover:bg-primary-950 hover:text-primary-100',
+                className: 'border border-primary-950 text-primary-950 hover:bg-primary-50',
             },
             {
                 variant: 'secondary',
                 theme: 'light',
-                className:
-                    'border border-primary-100 text-primary-100 hover:bg-primary-100 hover:text-primary-950',
+                className: 'border border-primary-100 text-primary-100 hover:bg-primary-900',
             },
             {
                 variant: 'tertiary',
                 theme: 'dark',
-                className:
-                    'bg-primary-100 hover:bg-primary-200 text-primary-600 hover:text-primary-950',
+                className: 'text-primary-950 after:bg-primary-950',
             },
             {
                 variant: 'tertiary',
                 theme: 'light',
+                className: 'text-primary-100 after:bg-primary-100',
+            },
+            {
+                variant: 'tertiary',
+                size: 'sm',
                 className:
-                    'bg-primary-700 hover:bg-primary-600 text-primary-200 hover:text-primary-100',
+                    'after:h-px after:right-[30px] after:left-[30px] after:bottom-0.75 hover:after:left-ld hover:after:right-ld',
+            },
+            {
+                variant: 'tertiary',
+                size: 'md',
+                className:
+                    'text-primary-950 after:h-0.25 after:left-ld after:right-ld after:bg-primary-950  after:bottom-1 hover:after:left-md hover:after:right-md',
+            },
+            {
+                variant: 'tertiary',
+                size: 'lg',
+                className:
+                    'text-primary-950 after:h-0.25 after:left-xl after:right-xl after:bg-primary-950 after:bottom-0.25 hover:after:left-ld hover:after:right-ld',
             },
         ],
         defaultVariants: {

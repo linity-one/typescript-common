@@ -21,6 +21,16 @@ export const CardVariants = cva('group/card p-xl bg-white shadow-400 gap-xs', {
             6: 'row-span-6',
             7: 'row-span-7',
             8: 'row-span-8',
+            9: 'row-span-9',
+            10: 'row-span-10',
+            11: 'row-span-11',
+            12: 'row-span-12',
+            13: 'row-span-13',
+            14: 'row-span-14',
+            15: 'row-span-15',
+            16: 'row-span-16',
+            17: 'row-span-17',
+            18: 'row-span-18',
             full: 'row-span-full',
         },
         start: {
@@ -60,6 +70,7 @@ export const CardVariants = cva('group/card p-xl bg-white shadow-400 gap-xs', {
         hover: 'static',
         flow: 'vertical',
         x_span: 8,
+        y_span: 4,
     },
 })
 

@@ -309,8 +309,8 @@ const config: Config = {
                     fontFamily: theme('fontFamily.body') || ['Cairo', 'sans-serif'],
                 },
                 [`@media (min-width: ${theme('screens.tablet')})`]: {
-                    '.text-subtext': { fontSize: '16px', lineHeight: '24px' },
-                    '.text-text': { fontSize: '21px', lineHeight: '32px' },
+                    '.text-subtext': { fontSize: '16px', lineHeight: '20px' },
+                    '.text-text': { fontSize: '19px', lineHeight: '24px' },
                     '.text-h3': { fontSize: '32px', lineHeight: '40px', letterSpacing: '0.025em' },
                     '.text-h2': { fontSize: '48px', lineHeight: '64px', letterSpacing: '0.025em' },
                     '.text-h1': { fontSize: '64px', lineHeight: '80px', letterSpacing: '0.05em' },

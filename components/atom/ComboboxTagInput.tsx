@@ -1,5 +1,5 @@
 import { Combobox, Description, Field, Label } from '@headlessui/react'
-import { FC, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { InputWrapperVariants } from '../ui/InputWrapper'
 import { VariantProps } from 'cva'
 import Tag from '../ui/Tag'

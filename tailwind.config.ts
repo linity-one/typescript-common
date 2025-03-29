@@ -39,7 +39,7 @@ const config: Config = {
             md: '8px',
             lg: '16px',
             xl: '24px',
-            full: '9999px',
+            full: '999px',
         },
         boxShadow: {
             none: '0 0 #0000',
@@ -217,7 +217,6 @@ const config: Config = {
                 0.75: '6px',
                 1: '8px',
                 1.5: '12px',
-                1.75: '14px',
                 2: '16px',
                 2.5: '20px',
                 3: '24px',

@@ -9,6 +9,7 @@ import rehypeStringify from 'rehype-stringify'
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize'
 import rehypeMathJax from 'rehype-mathjax'
 import addClasses from 'rehype-class-names'
+import remarkBreaks from 'remark-breaks'
 
 interface MarkdownProps extends HTMLAttributes<HTMLDivElement> {
     rawText: string
@@ -21,6 +22,7 @@ const Markdown: FC<MarkdownProps> = forwardRef<HTMLDivElement, MarkdownProps>(
         useEffect(() => {
             unified()
                 .use(remarkParse)
+                .use(remarkBreaks)
                 .use(remarkGfm)
                 .use(remarkMath, { singleDollarTextMath: true })
                 .use(remarkRehype)

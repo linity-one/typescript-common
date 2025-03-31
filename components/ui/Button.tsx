@@ -12,6 +12,8 @@ export const ButtonVariants = cva(
                 primary: '',
                 secondary: '',
                 tertiary: 'after:absolute relative after:transition-all after:duration-300',
+                quaternary: '',
+                delete: 'border border-error text-error hover:bg-error hover:text-white',
                 placeholder: '',
                 tag_ish: '',
             },
@@ -73,6 +75,17 @@ export const ButtonVariants = cva(
                 size: 'lg',
                 className:
                     'text-primary-950 after:h-0.25 after:left-xl after:right-xl after:bg-primary-950 after:bottom-0.25 hover:after:left-ld hover:after:right-ld',
+            },
+            {
+                variant: 'quaternary',
+                theme: 'dark',
+                className:
+                    'bg-primary-100 hover:bg-primary-300 text-primary-700 hover:text-primary-950',
+            },
+            {
+                variant: 'quaternary',
+                theme: 'light',
+                className: 'bg-primary-700 hover:bg-primary-600 text-primary-100 hover:text-white',
             },
         ],
         defaultVariants: {

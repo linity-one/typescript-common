@@ -9,78 +9,76 @@ import Label from '../ui/Label'
 import InputSubtext from '../ui/InputSubtext'
 
 interface ListboxProps extends VariantProps<typeof InputWrapperVariants> {
-  listValues: string[]
-  placeholderText?: string
-  name?: string
-  label?: string | JSX.Element
-  subtext?: string
-  value?: string
-  disabled?: boolean
-  onChange?: (value: string) => void
-  theme?: 'light' | 'dark'
-  className?: string
-
+    listValues: string[]
+    placeholderText?: string
+    name?: string
+    label?: string | JSX.Element
+    subtext?: string
+    value?: string
+    disabled?: boolean
+    onChange?: (value: string) => void
+    theme?: 'light' | 'dark'
+    className?: string
 }
 
 export const ListboxSelect: FC<ListboxProps> = ({
-  name,
-  label,
-  subtext,
-  placeholderText,
-  variant,
-  listValues,
-  value,
-  disabled,
-  onChange,
-  theme = 'dark',
-  className,
+    name,
+    label,
+    subtext,
+    placeholderText,
+    variant,
+    listValues,
+    value,
+    disabled,
+    onChange,
+    theme = 'dark',
+    className,
 }) => {
-  return (
-    <Field>
-      <Listbox name={name} value={value} onChange={onChange}>
-        <div className={InputWrapperVariants({ variant, className })}>
-          <ListboxButton
-            disabled={disabled || listValues.length == 0}
-            className="peer order-2 items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white"
-          >
-            <span className={value ? 'text-primary-950' : ''}>
-              {value || (placeholderText ? placeholderText : 'select something')}
-            </span>
-            <ChevronDownIcon
-              className={disabled || listValues.length == 0 ? 'hidden' : ''}
-              size={'default'}
-              aria-hidden="true"
-            />
-          </ListboxButton>
-          <Label theme={theme}>{label}</Label>
-          <InputSubtext theme={theme}>{subtext}</InputSubtext>
-          <ListboxOptions
-  anchor="bottom"
-  transition
-  className={cn(
-    'w-[var(--button-width)] bg-white [--anchor-gap:var(--spacing-1)] focus:outline-none max-h-40 overflow-y-auto',
-    'transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0'
-  )}
->
-  {listValues.map((listValue) => (
-    <ListboxOption
-      key={listValue}
-      value={listValue}
-      className="group flex cursor-default border-b border-l border-r border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950 select-none data-[focus]:bg-primary-100"
-    >
-      <span className="w-full">{listValue}</span>
-      <CheckIcon
-        size="default"
-        className="invisible group-data-[selected]:visible"
-      />
-    </ListboxOption>
-  ))}
-</ListboxOptions>
-
-        </div>
-      </Listbox>
-    </Field>
-  )
+    return (
+        <Field>
+            <Listbox name={name} value={value} onChange={onChange}>
+                <div className={InputWrapperVariants({ variant, className })}>
+                    <ListboxButton
+                        disabled={disabled || listValues.length == 0}
+                        className="peer order-2 items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white"
+                    >
+                        <span className={value ? 'text-primary-950' : ''}>
+                            {value || (placeholderText ? placeholderText : 'select something')}
+                        </span>
+                        <ChevronDownIcon
+                            className={disabled || listValues.length == 0 ? 'hidden' : ''}
+                            size={'default'}
+                            aria-hidden="true"
+                        />
+                    </ListboxButton>
+                    <Label theme={theme}>{label}</Label>
+                    <InputSubtext theme={theme}>{subtext}</InputSubtext>
+                    <ListboxOptions
+                        anchor="bottom"
+                        transition
+                        className={cn(
+                            'w-[var(--button-width)] bg-white [--anchor-gap:var(--spacing-1)] focus:outline-none max-h-40 overflow-y-auto',
+                            'transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0',
+                        )}
+                    >
+                        {listValues.map((listValue) => (
+                            <ListboxOption
+                                key={listValue}
+                                value={listValue}
+                                className="group flex cursor-default border-b border-l border-r border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950 select-none data-[focus]:bg-primary-100"
+                            >
+                                <span className="w-full">{listValue}</span>
+                                <CheckIcon
+                                    size="default"
+                                    className="invisible group-data-[selected]:visible"
+                                />
+                            </ListboxOption>
+                        ))}
+                    </ListboxOptions>
+                </div>
+            </Listbox>
+        </Field>
+    )
 }
 
 /*

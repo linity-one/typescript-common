@@ -299,6 +299,11 @@ const config: Config = {
                     fontFamily: theme?.('fontFamily.title') || ['Cairo', 'sans-serif'],
                     letterSpacing: '0.025em',
                 },
+                h4: {
+                    fontWeight: theme?.('fontWeight.semi-bold') || '550',
+                    fontFamily: theme?.('fontFamily.title') || ['Cairo', 'sans-serif'],
+                    letterSpacing: '0.025em',
+                },
                 p: {
                     fontWeight: theme('fontWeight.normal') || '400',
                     fontFamily: theme('fontFamily.body') || ['Cairo', 'sans-serif'],
@@ -310,12 +315,49 @@ const config: Config = {
                 [`@media (min-width: ${theme('screens.tablet')})`]: {
                     '.text-subtext': { fontSize: '16px', lineHeight: '20px' },
                     '.text-text': { fontSize: '19px', lineHeight: '24px' },
-                    '.text-h3': { fontSize: '32px', lineHeight: '40px', letterSpacing: '0.025em' },
-                    '.text-h2': { fontSize: '48px', lineHeight: '64px', letterSpacing: '0.025em' },
-                    '.text-h1': { fontSize: '64px', lineHeight: '80px', letterSpacing: '0.05em' },
-                    h1: { fontSize: '64px', lineHeight: '80px', letterSpacing: '0.05em' },
-                    h2: { fontSize: '48px', lineHeight: '64px', letterSpacing: '0.025em' },
-                    h3: { fontSize: '32px', lineHeight: '40px', letterSpacing: '0.025em' },
+                    '.text-h1': {
+                        fontSize: '64px',
+                        lineHeight: '80px',
+                        letterSpacing: '0.05em',
+                    },
+                    '.text-h2': {
+                        fontSize: '48px',
+                        lineHeight: '64px',
+                        letterSpacing: '0.025em',
+                    },
+                    '.text-h3': {
+                        fontSize: '32px',
+                        lineHeight: '40px',
+                        letterSpacing: '0.025em',
+                    },
+                    '.text-h4': {
+                        fontSize: '27px',
+                        lineHeight: '32px',
+                        letterSpacing: '0.025em',
+                    },
+                    h1: {
+                        fontSize: '64px',
+                        lineHeight: '80px',
+                        letterSpacing: '0.05em',
+                        fontWeight: theme?.('fontWeight.bold') || '700',
+                    },
+                    h2: {
+                        fontSize: '48px',
+                        lineHeight: '64px',
+                        letterSpacing: '0.025em',
+                        fontWeight: theme?.('fontWeight.normal') || '400',
+                    },
+                    h3: {
+                        fontSize: '32px',
+                        lineHeight: '40px',
+                        letterSpacing: '0.025em',
+                        fontWeight: theme?.('fontWeight.semi-bold') || '550',
+                    },
+                    h4: {
+                        fontSize: '27px',
+                        lineHeight: '32px',
+                        fontWeight: theme?.('fontWeight.semi-bold') || '550',
+                    },
                     p: { fontSize: '21px', lineHeight: '32px' },
                     label: { fontSize: '21px', lineHeight: '32px' },
                 },

@@ -10,7 +10,7 @@ import { infoToast } from '../toast/toast'
 
 export interface AutocompleteFunctions<X> {
     autocompleteFunction: (input: string) => Promise<X[]>
-    renderFunction: (elm: X) => string
+    renderFunction: (elm: X) => string | { text: string; callback: () => void }
 }
 
 interface ComboboxTagInputProps<X> extends VariantProps<typeof InputWrapperVariants> {
@@ -99,22 +99,25 @@ const ComboboxTagInput = <X,>({
                             'transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0',
                         )}
                     >
-                        {dropdownItems.map((val, idx) => (
-                            <Combobox.Option
-                                key={idx}
-                                value={val}
-                                className=" group flex items-center justify-between cursor-default border-b border-l border-r  border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950 select-none data-[focus]:bg-primary-100"
-                            >
-                                <span className={cn('text-primary-950 text-text')}>
-                                    {autocompleteFunctions.renderFunction(val)}
-                                </span>
-                                <CheckIcon
-                                    className={'invisible group-data-[selected]:visible'}
-                                    size="default"
-                                    aria-hidden="true"
-                                />
-                            </Combobox.Option>
-                        ))}
+                        {dropdownItems.map((val, idx) => {
+                            const renderResult = autocompleteFunctions.renderFunction(val)
+                            const text =
+                                typeof renderResult === 'string' ? renderResult : renderResult.text
+                            return (
+                                <Combobox.Option
+                                    key={idx}
+                                    value={val}
+                                    className=" group flex items-center justify-between cursor-default border-b border-l border-r  border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950 select-none data-[focus]:bg-primary-100"
+                                >
+                                    <span className={cn('text-primary-950 text-text')}>{text}</span>
+                                    <CheckIcon
+                                        className={'invisible group-data-[selected]:visible'}
+                                        size="default"
+                                        aria-hidden="true"
+                                    />
+                                </Combobox.Option>
+                            )
+                        })}
                     </Combobox.Options>
                     {selectedItems.length == 0 ? (
                         <Description className="order-3 mt-0.5 font-body text-primary-600 text-subtext peer-focus:text-primary-950">
@@ -123,12 +126,22 @@ const ComboboxTagInput = <X,>({
                     ) : (
                         <div className={'flex mt-0.5 order-3 flex-row flex-wrap gap-x-4 gap-y-2 '}>
                             {selectedItems.map((item, idx) => {
+                                const renderResult = autocompleteFunctions.renderFunction(item)
+                                const text =
+                                    typeof renderResult === 'string'
+                                        ? renderResult
+                                        : renderResult.text
+                                const callback =
+                                    typeof renderResult === 'object'
+                                        ? renderResult.callback
+                                        : undefined
                                 return (
                                     <Tag
-                                        key={autocompleteFunctions.renderFunction(item)}
-                                        closeCallback={() => removeIndexFromSelectedItems(item)}
+                                        key={text}
+                                        close_callback={() => removeIndexFromSelectedItems(item)}
+                                        click_callback={callback}
                                     >
-                                        {autocompleteFunctions.renderFunction(item)}
+                                        {text}
                                     </Tag>
                                 )
                             })}

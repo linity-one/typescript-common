@@ -3,6 +3,7 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Code Style Guidelines
+
 - **Typescript**: Use strict typing with proper interfaces and types
 - **Components**: Follow atomic design pattern (atom, ui, modal folders)
 - **Naming**: Use PascalCase for components, camelCase for functions/variables

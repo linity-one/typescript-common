@@ -24,12 +24,13 @@ const ConfirmModal: FC<ConfirmModalProps> = ({
 }) => {
     const handleConfirm = () => {
         if (onConfirm) onConfirm()
-        close_fn()
+
+        close_fn ? close_fn() : {}
     }
 
     const handleCancel = () => {
         if (onCancel) onCancel()
-        close_fn()
+        close_fn ? close_fn() : {}
     }
 
     return (

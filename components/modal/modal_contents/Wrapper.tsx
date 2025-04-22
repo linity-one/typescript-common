@@ -12,13 +12,13 @@ export type ModalType = WrapperProps['type']
 const Wrapper: FC<WrapperProps> = (props) => {
     switch (props.type) {
         case 'confirm':
-            return <ConfirmModal {...props as ConfirmModalProps} />
+            return <ConfirmModal {...(props as ConfirmModalProps)} />
         case 'okay':
-            return <OkayModal {...props as OkayModalProps} />
+            return <OkayModal {...(props as OkayModalProps)} />
         case 'delete':
-            return <DeleteModal {...props as DeleteModalProps} />
+            return <DeleteModal {...(props as DeleteModalProps)} />
         case 'content':
-            return <ContentModal {...props as ContentModalProps} />
+            return <ContentModal {...(props as ContentModalProps)} />
         default:
             return null
     }

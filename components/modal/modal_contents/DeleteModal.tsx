@@ -24,12 +24,12 @@ const DeleteModal: FC<DeleteModalProps> = ({
 }) => {
     const handleDelete = () => {
         if (onDelete) onDelete()
-        close_fn()
+        close_fn ? close_fn() : {}
     }
 
     const handleCancel = () => {
         if (onCancel) onCancel()
-        close_fn()
+        close_fn ? close_fn() : {}
     }
 
     return (

@@ -9,7 +9,7 @@ export const svgVariants = cva(
             size: {
                 small: 'min-w-2.5 w-2.5 min-h-2.5 h-2.5 stroke-[1.7px]',
                 default: 'min-w-3 w-3 min-h-3 h-3 stroke-2',
-                large: 'min-w-5 w-5 min-h-5 h-5 stroke-3',
+                large: 'min-w-4 w-4 min-h-4 h-4 stroke-[2.4px]',
                 xl: 'min-w-10 w-10 min-h-10 h-10 stroke-3',
             },
             animations: {

@@ -46,6 +46,15 @@ import Attachement from '../svg/attachement'
 import Internet from '../svg/internet'
 import Switch from '../svg/switch'
 import Write from '../svg/write'
+import Guard from '../svg/guard'
+import RemoveFriend from '../svg/remove_friend'
+import Link from '../svg/link'
+import SendMessage from '../svg/send_message'
+import TrendDown from '../svg/trend_down'
+import TrendUp from '../svg/trend_up'
+import Pencil from '../svg/pencil'
+import Dashboard from '../svg/dashboard'
+import Exercise from '../svg/exercise'
 
 const IconsVariants = cva('', {
     variants: {
@@ -237,4 +246,40 @@ export const AttachementIcon: FC<IconsProps> = ({ size, variant, className }) =>
 
 export const InternetIcon: FC<IconsProps> = ({ size, variant, className }) => {
     return <Internet size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const GuardIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Guard size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const RemoveFriendIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <RemoveFriend size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const LinkIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Link size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const SendMessageIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <SendMessage size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const TrendDownIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <TrendDown size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const TrendUpIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <TrendUp size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const PencilIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Pencil size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const DashboardIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Dashboard size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const ExerciseIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Exercise size={size} className={cn(IconsVariants({ variant, className }))} />
 }

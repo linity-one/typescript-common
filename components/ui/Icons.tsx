@@ -55,6 +55,7 @@ import TrendUp from '../svg/trend_up'
 import Pencil from '../svg/pencil'
 import Dashboard from '../svg/dashboard'
 import Exercise from '../svg/exercise'
+import Playlist from '../svg/playlist'
 
 const IconsVariants = cva('', {
     variants: {
@@ -282,4 +283,8 @@ export const DashboardIcon: FC<IconsProps> = ({ size, variant, className }) => {
 
 export const ExerciseIcon: FC<IconsProps> = ({ size, variant, className }) => {
     return <Exercise size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const PlaylistIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Playlist size={size} className={cn(IconsVariants({ variant, className }))} />
 }

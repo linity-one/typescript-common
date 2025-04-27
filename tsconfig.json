@@ -30,7 +30,9 @@
             //normal path
             "@/components/*": ["./src/components/*"],
             "@/providers/*": ["./src/components/providers/*"],
-            "@/lib/*": ["./src/lib/*"]
+            "@/lib/*": ["./src/lib/*"],
+            //test utils
+            "@/test-utils/*": ["./src/test-utils/*"]
         },
         "target": "ES2017"
     },

@@ -20,7 +20,14 @@ const config: Config = {
             phablet: '560px',
             mobile: '330px',
         },
-        fontSize: {},
+        fontSize: {
+            sm: ['14px', '16px'],
+            base: ['17px', '20px'],
+            lg: ['21px', '24px'],
+            xl: ['27px', '32px'],
+            xxl: ['48px', '64px'],
+            '2xl': ['64px', '80px'],
+        },
         fontWeight: {
             normal: '400',
             'semi-bold': '550',

@@ -59,7 +59,7 @@ const Combobox = <X,>({
                 setDropdownItems([])
             }
         }
-        
+
         const debounce = setTimeout(fetchItems, 300)
         return () => clearTimeout(debounce)
     }, [query, autocompleteFunctions])
@@ -80,9 +80,9 @@ const Combobox = <X,>({
 
     return (
         <Field id={name} className={className}>
-            <HeadlessCombobox 
-                name={name} 
-                value={selectedItem} 
+            <HeadlessCombobox
+                name={name}
+                value={selectedItem}
                 onChange={handleSelectionChange}
                 disabled={errors}
             >
@@ -94,7 +94,7 @@ const Combobox = <X,>({
                                 className={InputVariants({
                                     className: cn(
                                         'data-[open]:rounded-b-none data-[open]:focus:ring-0',
-                                        errors && 'border-error'
+                                        errors && 'border-error',
                                     ),
                                 })}
                                 placeholder={placeholderText}
@@ -107,7 +107,7 @@ const Combobox = <X,>({
                                     }
                                 }}
                                 onKeyDown={handleKeyDown}
-                                displayValue={(item: X) => 
+                                displayValue={(item: X) =>
                                     item ? autocompleteFunctions.renderFunction(item) : ''
                                 }
                             />
@@ -122,7 +122,7 @@ const Combobox = <X,>({
                                         'w-[var(--input-width)] bg-white [--anchor-gap:var(--spacing-1)]',
                                         'border border-primary-400 rounded-b-md shadow-lg',
                                         'transform transition-all duration-100 ease-in-out',
-                                        open ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-95'
+                                        open ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-95',
                                     )}
                                     static
                                 >
@@ -130,13 +130,13 @@ const Combobox = <X,>({
                                         <HeadlessCombobox.Option
                                             key={idx}
                                             value={val}
-                                            className={({ focus }) => 
+                                            className={({ focus }) =>
                                                 cn(
                                                     'group flex items-center justify-between',
                                                     'px-3 py-2 text-sm cursor-default',
                                                     'border-b border-l border-r border-primary-400',
                                                     'last:rounded-b-md',
-                                                    focus ? 'bg-primary-50' : 'bg-white'
+                                                    focus ? 'bg-primary-50' : 'bg-white',
                                                 )
                                             }
                                         >
@@ -159,13 +159,10 @@ const Combobox = <X,>({
                                 </HeadlessCombobox.Options>
                             )}
                         </div>
-                        
+
                         {subtext && (
                             <Description
-                                className={cn(
-                                    'mt-1',
-                                    errors ? 'text-error' : 'text-primary-600'
-                                )}
+                                className={cn('mt-1', errors ? 'text-error' : 'text-primary-600')}
                             >
                                 <InputSubtext>{subtext}</InputSubtext>
                             </Description>

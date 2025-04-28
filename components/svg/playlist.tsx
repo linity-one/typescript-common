@@ -11,4 +11,4 @@ const Playlist = ({ ...props }: ExpandedSvgProps) => {
     )
 }
 
-export default Playlist 
+export default Playlist

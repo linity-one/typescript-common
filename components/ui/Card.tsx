@@ -52,7 +52,7 @@ export const CardVariants = cva('group/card p-xl bg-white shadow-400 gap-xs', {
                 'transition-all duration-300 hover:shadow-800 hover:-translate-y-0.25 hover:scale-[1.005]',
         },
         flow: {
-            grid: 'grid grid-rows-[40px,1fr,40px]',
+            grid: 'grid',
             vertical: 'flex flex-col',
             horizontal: 'flex flex-row',
         },

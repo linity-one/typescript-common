@@ -30,7 +30,7 @@ const ModalContainer: React.FC = () => {
     return modal ? (
         <div
             className={
-                'absolute inset-0 bg-gunmetal/50 z-50 grid grid-cols-12 items-center justify-center'
+                'absolute inset-0 bg-gunmetal/50 z-50 grid grid-cols-8 items-center justify-center'
             }
             onClick={handleOutsideClick}
         >

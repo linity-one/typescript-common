@@ -79,7 +79,7 @@ const ComboboxTagInput = <X,>({
                     <Combobox.Input
                         ref={inputRef}
                         className={InputVariants({
-                            className: 'data-[open]:rounded-b-none data-[open]:focus:ring-0 ',
+                            className: 'data-open:rounded-b-none data-open:focus:ring-0 ',
                         })}
                         placeholder={placeholderText}
                         onChange={(event) => setQuery(event.target.value)}
@@ -87,7 +87,7 @@ const ComboboxTagInput = <X,>({
                     ></Combobox.Input>
                     <Label
                         className={
-                            'order-1 text-text text-primary-600 peer-focus:text-primary-950 data-[open]:text-primary-950'
+                            'order-1 text-text text-primary-600 peer-focus:text-primary-950 data-open:text-primary-950'
                         }
                     >
                         {label}
@@ -95,8 +95,8 @@ const ComboboxTagInput = <X,>({
                     <Combobox.Options
                         anchor="bottom"
                         className={cn(
-                            'w-[var(--input-width)] bg-white [--anchor-gap:var(--spacing-1)] focus:outline-none',
-                            'transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0',
+                            'w-(--input-width) bg-white [--anchor-gap:var(--spacing-1)] focus:outline-hidden',
+                            'transition duration-100 ease-in data-leave:data-closed:opacity-0',
                         )}
                     >
                         {dropdownItems.map((val, idx) => {
@@ -107,11 +107,11 @@ const ComboboxTagInput = <X,>({
                                 <Combobox.Option
                                     key={idx}
                                     value={val}
-                                    className=" group flex items-center justify-between cursor-default border-b border-l border-r  border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950 select-none data-[focus]:bg-primary-100"
+                                    className=" group flex items-center justify-between cursor-default border-b border-l border-r  border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950 select-none data-focus:bg-primary-100"
                                 >
                                     <span className={cn('text-primary-950 text-text')}>{text}</span>
                                     <CheckIcon
-                                        className={'invisible group-data-[selected]:visible'}
+                                        className={'invisible group-data-selected:visible'}
                                         size="default"
                                         aria-hidden="true"
                                     />

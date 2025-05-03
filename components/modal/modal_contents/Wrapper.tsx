@@ -6,7 +6,12 @@ import BlankModal, { BlankModalProps } from './BlankModal'
 
 import { FC } from 'react'
 
-export type WrapperProps = ConfirmModalProps | OkayModalProps | DeleteModalProps | ContentModalProps | BlankModalProps
+export type WrapperProps =
+    | ConfirmModalProps
+    | OkayModalProps
+    | DeleteModalProps
+    | ContentModalProps
+    | BlankModalProps
 
 export type ModalType = WrapperProps['type']
 

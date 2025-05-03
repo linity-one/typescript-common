@@ -40,7 +40,7 @@ export const ListboxSelect: FC<ListboxProps> = ({
                 <div className={InputWrapperVariants({ variant, className })}>
                     <ListboxButton
                         disabled={disabled || listValues.length == 0}
-                        className="peer order-2 items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white"
+                        className="peer order-2 items-center data-invalid:border-alert rounded-md data-open:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between bg-white"
                     >
                         <span className={value ? 'text-primary-950' : ''}>
                             {value || (placeholderText ? placeholderText : 'select something')}
@@ -57,20 +57,20 @@ export const ListboxSelect: FC<ListboxProps> = ({
                         anchor="bottom"
                         transition
                         className={cn(
-                            'w-[var(--button-width)] bg-white [--anchor-gap:var(--spacing-1)] focus:outline-none max-h-40 overflow-y-auto',
-                            'transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0',
+                            'w-(--button-width) bg-white [--anchor-gap:var(--spacing-1)] focus:outline-hidden max-h-40 overflow-y-auto',
+                            'transition duration-100 ease-in data-leave:data-closed:opacity-0',
                         )}
                     >
                         {listValues.map((listValue) => (
                             <ListboxOption
                                 key={listValue}
                                 value={listValue}
-                                className="group flex cursor-default border-b border-l border-r border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950 select-none data-[focus]:bg-primary-100"
+                                className="group flex cursor-default border-b border-l border-r border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950 select-none data-focus:bg-primary-100"
                             >
                                 <span className="w-full">{listValue}</span>
                                 <CheckIcon
                                     size="default"
-                                    className="invisible group-data-[selected]:visible"
+                                    className="invisible group-data-selected:visible"
                                 />
                             </ListboxOption>
                         ))}
@@ -96,10 +96,10 @@ const ListboxSelect: FC<ListboxProps> = ({
     <Field>
       <Listbox name={name} onChange={setSelectedValue}>
         <div className={InputWrapperVariants({ variant, className })}>
-          <Label className="mb-0.5 text-text font-body text-primary-600 data-[open]:text-gunmetal-950">
+          <Label className="mb-0.5 text-text font-body text-primary-600 data-open:text-gunmetal-950">
             {label}
           </Label>
-          <ListboxButton className="items-center data-[invalid]:border-alert rounded-md data-[open]:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between">
+          <ListboxButton className="items-center data-invalid:border-alert rounded-md data-open:rounded-b-none border border-primary-400 py-1 px-2 text-text text-primary-600 flex flex-row justify-between">
             <span className={selectedValue ? "text-primary-950" : ""}>
               {selectedValue
                 ? selectedValue
@@ -115,7 +115,7 @@ const ListboxSelect: FC<ListboxProps> = ({
             >
               {listValues.map((value, index) => (
                 <ListboxOption
-                  className="data-[open]:text-alert border-b border-l border-r  border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950"
+                  className="data-open:text-alert border-b border-l border-r  border-primary-400 px-2 py-1 last:rounded-b-md text-text text-primary-950"
                   key={index}
                   value={value}
 

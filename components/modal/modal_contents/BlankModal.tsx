@@ -10,4 +10,4 @@ const BlankModal: FC<BlankModalProps> = ({ content }) => {
     return <>{content}</>
 }
 
-export default BlankModal 
+export default BlankModal

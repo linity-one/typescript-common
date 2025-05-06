@@ -4,8 +4,13 @@ import React, { useEffect } from 'react'
 import Wrapper, { WrapperProps as ModalData } from './modal_contents/Wrapper'
 
 import ModalService from './ModalService'
+import { cn } from '../../lib/cn'
 
-const ModalContainer: React.FC = () => {
+interface ModalContainerProps {
+    className?: string
+}
+
+const ModalContainer: React.FC<ModalContainerProps> = ({ className }) => {
     const [modal, setModal] = React.useState<{ data: ModalData; key: string } | null>(null)
 
     useEffect(() => {
@@ -29,9 +34,7 @@ const ModalContainer: React.FC = () => {
 
     return modal ? (
         <div
-            className={
-                'fixed inset-0 bg-gunmetal/50 z-50 grid grid-cols-8 items-center justify-center px-xl'
-            }
+            className={cn('z-50 grid grid-cols-8 items-center justify-center', className)}
             onClick={handleOutsideClick}
         >
             <Wrapper {...modal.data} close_fn={() => ModalService.close_modal(modal.key)} />

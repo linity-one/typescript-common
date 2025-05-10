@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { cva, VariantProps } from 'cva'
-import { cn } from '@/common/lib/cn'
+import { cn } from '../../lib/cn'
 import Linkedin from '../svg/linkedin'
 import Location from '../svg/location'
 import Mail from '../svg/mail'
@@ -56,6 +56,9 @@ import Pencil from '../svg/pencil'
 import Dashboard from '../svg/dashboard'
 import Exercise from '../svg/exercise'
 import Playlist from '../svg/playlist'
+import Hamburger from '../svg/hamburger'
+import Group from '../svg/group'
+import ArrowUpRight from '../svg/arrowupright'
 
 const IconsVariants = cva('', {
     variants: {
@@ -287,4 +290,16 @@ export const ExerciseIcon: FC<IconsProps> = ({ size, variant, className }) => {
 
 export const PlaylistIcon: FC<IconsProps> = ({ size, variant, className }) => {
     return <Playlist size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const HamburgerIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Hamburger size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const GroupIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <Group size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const ArrowUpRightIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <ArrowUpRight size={size} className={cn(IconsVariants({ variant, className }))} />
 }

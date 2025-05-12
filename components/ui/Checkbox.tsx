@@ -6,11 +6,11 @@ import onChange = toast.onChange
 import { cn } from '../../lib/cn'
 
 const CheckboxVariants = cva(
-    'group inline-block rounded-sm border bg-none data-[checked]:border-none',
+    'group inline-block rounded-sm border bg-none data-checked:border-none',
     {
         variants: {
             theme: {
-                light: 'border-primary-300 text-gunmetal-950 data-[checked]:bg-accent',
+                light: 'border-primary-300 text-gunmetal-950 data-checked:bg-accent',
                 dark: 'border-primary-400 text-accent data-[checked]:bg-primary-950:',
             },
         },
@@ -35,7 +35,7 @@ const Checkbox: FC<CheckboxProps> = ({ theme, onChange, ...props }) => {
             )}
         >
             <svg
-                className="opacity-0 group-data-[checked]:opacity-100"
+                className="opacity-0 group-data-checked:opacity-100"
                 width="16"
                 height="12"
                 viewBox="0 0 16 12"

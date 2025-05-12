@@ -11,7 +11,7 @@ export const aiToast = (message: string, callback_action?: () => void) => {
             onClick={callback_action}
             className={`flex flex-row bg-primary-950 py-2 px-3  gap-2 items-center rounded-md border border-primary-950 ${callback_action ? 'text-accent cursor-pointer' : 'text-primary-100'}`}
         >
-            <span className=" text-text flex-grow overflow-hidden">{message}</span>
+            <span className=" text-text grow overflow-hidden">{message}</span>
             <Button
                 className={'text-primary-100 cursor-pointer'}
                 onClick={(e) => {
@@ -29,7 +29,7 @@ export const infoToast = (message: string) => {
     sonnerToast.custom((t) => (
         <div className="flex flex-row bg-white p-2 gap-2 items-center rounded-md border border-primary-950">
             <InformationIcon size="default" className="text-primary-950" />
-            <span className="text-primary-950 text-text flex-grow whitespace-nowrap overflow-hidden">
+            <span className="text-primary-950 text-text grow whitespace-nowrap overflow-hidden">
                 {message}
             </span>
             <div className="text-primary-950" onClick={() => toast.dismiss(t)}>
@@ -43,7 +43,7 @@ export const successToast = (message: string) => {
     sonnerToast.custom((t) => (
         <div className="flex flex-row bg-white p-2 gap-2 items-center rounded-md border border-success">
             <SuccessIcon size="default" className="text-success" />
-            <span className="text-primary-950 text-text flex-grow whitespace-nowrap overflow-hidden">
+            <span className="text-primary-950 text-text grow whitespace-nowrap overflow-hidden">
                 {message}
             </span>
             <div className="text-primary-950" onClick={() => toast.dismiss(t)}>
@@ -57,7 +57,7 @@ export const alertToast = (message: string) => {
     sonnerToast.custom((t) => (
         <div className="flex flex-row bg-white p-2 gap-2 items-center rounded-md border border-warning">
             <AlertIcon size="default" className="text-warning" />
-            <span className="text-primary-950 text-text flex-grow ">{message}</span>
+            <span className="text-primary-950 text-text grow ">{message}</span>
             <div className="text-primary-950" onClick={() => toast.dismiss(t)}>
                 <XIcon size="default" />
             </div>
@@ -69,7 +69,7 @@ export const errorToast = (message: string) => {
     sonnerToast.custom((t) => (
         <div className="flex flex-row bg-white p-2 gap-2 items-center rounded-md border border-error">
             <ErrorIcon size="default" className=" text-error" />
-            <span className="text-primary-950 text-text flex-grow ">{message}</span>
+            <span className="text-primary-950 text-text grow ">{message}</span>
             <div className="text-primary-950" onClick={() => toast.dismiss(t)}>
                 <XIcon size="default" />
             </div>
@@ -110,7 +110,7 @@ const LoadingToastContent: React.FC<LoadingToastContentProps> = ({ message, seco
     return (
         <div className="flex flex-row bg-white p-2 gap-2 items-center rounded-md border border-primary-950">
             <LoadingAnimation size="default" />
-            <span className="text-primary-950 text-text flex-grow whitespace-nowrap overflow-hidden">
+            <span className="text-primary-950 text-text grow whitespace-nowrap overflow-hidden">
                 {message}
                 {remainingSeconds !== undefined &&
                     remainingSeconds >= 0 &&
@@ -139,7 +139,7 @@ export const promiseToast = <T,>(
                 (t) => (
                     <div className="flex flex-row bg-white p-2 gap-2 items-center rounded-md border border-success">
                         <SuccessIcon size="default" className="text-success" />
-                        <span className="text-primary-950 text-text flex-grow whitespace-nowrap overflow-hidden">
+                        <span className="text-primary-950 text-text grow whitespace-nowrap overflow-hidden">
                             {messages.success}
                         </span>
                         <div className="text-primary-950" onClick={() => toast.dismiss(t)}>
@@ -156,9 +156,7 @@ export const promiseToast = <T,>(
                 (t) => (
                     <div className="flex flex-row bg-white p-2 gap-2 items-center rounded-md border border-error">
                         <ErrorIcon size="default" className=" text-error" />
-                        <span className="text-primary-950 text-text flex-grow ">
-                            {messages.error}
-                        </span>
+                        <span className="text-primary-950 text-text grow ">{messages.error}</span>
                         <div className="text-primary-950" onClick={() => toast.dismiss(t)}>
                             <XIcon size="default" />
                         </div>

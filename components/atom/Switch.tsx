@@ -4,7 +4,7 @@ import { FC } from 'react'
 import { cva, VariantProps } from 'cva'
 
 const SwitchVariants = cva(
-    'order-2 group block bg-primary-400 h-3 w-5 items-center rounded-full data-[checked]:bg-primary-950 p-[1px] overflow-visible',
+    'order-2 group block bg-primary-400 h-3 w-5 items-center rounded-full data-checked:bg-primary-950 p-[1px] overflow-visible',
     {
         variants: {
             size: {
@@ -55,7 +55,7 @@ const Switch: FC<SwitchProps> = ({ size, name, value, off_callback, on_callback 
             onChange={onChangeHandler}
             className={SwitchVariants({ size })}
         >
-            <span className="block size-2.5 rounded-full bg-primary-100 transition translate-x-[2px] group-data-[checked]:translate-x-[16px] group-data-[checked]:bg-accent" />
+            <span className="block size-2.5 rounded-full bg-primary-100 transition translate-x-[2px] group-data-checked:translate-x-[16px] group-data-checked:bg-accent" />
         </HeadlessSwitch>
     )
 }

@@ -93,7 +93,7 @@ const Combobox = <X,>({
                                 ref={inputRef}
                                 className={InputVariants({
                                     className: cn(
-                                        'data-[open]:rounded-b-none data-[open]:focus:ring-0',
+                                        'data-open:rounded-b-none data-open:focus:ring-0',
                                         errors && 'border-error',
                                     ),
                                 })}
@@ -111,7 +111,7 @@ const Combobox = <X,>({
                                     item ? autocompleteFunctions.renderFunction(item) : ''
                                 }
                             />
-                            <Label className="order-1 text-text text-primary-600 peer-focus:text-primary-950 data-[open]:text-primary-950">
+                            <Label className="order-1 text-text text-primary-600 peer-focus:text-primary-950 data-open:text-primary-950">
                                 {label}
                             </Label>
 
@@ -119,7 +119,7 @@ const Combobox = <X,>({
                                 <HeadlessCombobox.Options
                                     anchor="bottom"
                                     className={cn(
-                                        'w-[var(--input-width)] bg-white [--anchor-gap:var(--spacing-1)]',
+                                        'w-(--input-width) bg-white [--anchor-gap:var(--spacing-1)]',
                                         'border border-primary-400 rounded-b-md shadow-lg',
                                         'transform transition-all duration-100 ease-in-out',
                                         open ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-95',

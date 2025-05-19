@@ -59,6 +59,7 @@ import Playlist from '../svg/playlist'
 import Hamburger from '../svg/hamburger'
 import Group from '../svg/group'
 import ArrowUpRight from '../svg/arrowupright'
+import ThreeDots from '../svg/threedots'
 
 const IconsVariants = cva('', {
     variants: {
@@ -302,4 +303,8 @@ export const GroupIcon: FC<IconsProps> = ({ size, variant, className }) => {
 
 export const ArrowUpRightIcon: FC<IconsProps> = ({ size, variant, className }) => {
     return <ArrowUpRight size={size} className={cn(IconsVariants({ variant, className }))} />
+}
+
+export const ThreeDotsIcon: FC<IconsProps> = ({ size, variant, className }) => {
+    return <ThreeDots size={size} className={cn(IconsVariants({ variant, className }))} />
 }

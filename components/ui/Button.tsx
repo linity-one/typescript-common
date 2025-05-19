@@ -18,7 +18,7 @@ export const ButtonVariants = cva(
                 tag_ish: '',
             },
             size: {
-                sm: 'px-md py-xxs text-subtext  rounded-sm gap-1',
+                sm: 'px-md py-xxs text-subtext  rounded-md gap-1',
                 md: 'px-ld py-xs text-text rounded-md gap-1',
                 lg: 'px-xl py-sm text-h3 rounded-md gap-1.5',
             },

@@ -2,7 +2,7 @@ import { FC, forwardRef, HTMLAttributes } from 'react'
 import { cva, VariantProps } from 'cva'
 import { cn } from '../../lib/cn'
 
-export const CardVariants = cva('group/card p-xl bg-white shadow-400 gap-xs', {
+export const CardVariants = cva('group/card p-xl bg-white shadow-400', {
     variants: {
         x_span: {
             2: 'col-span-2',

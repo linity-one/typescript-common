@@ -24,7 +24,7 @@ interface FileInputProps
     text: string
     bold_text: string
     subtext: string
-    files: File[]
+    files: File[] | string[]
 }
 
 const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
@@ -59,9 +59,9 @@ const FileInput = forwardRef<HTMLInputElement, FileInputProps>(
                 </div>
                 {files && files.length > 0 && (
                     <ul className="list-none flex flex-row gap-x-4">
-                        {Array.from(files).map((file, index) => (
+                        {files.map((file, index) => (
                             <li key={index}>
-                                <Tag>{file.name}</Tag>
+                                <Tag>{typeof file === 'string' ? file : file.name}</Tag>
                             </li>
                         ))}
                     </ul>
